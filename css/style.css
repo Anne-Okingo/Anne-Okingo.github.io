@@ -68,7 +68,6 @@ body {
   color: #6c757d;
   text-align: left;
   background-color: #ffffff;
-  background-image: url('imageback.jpg'); 
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -6365,10 +6364,68 @@ a.close.disabled {
 .align-text-top {
   vertical-align: text-top !important;
 }
-
+/*
 .bg-primary {
+  /* Fallback background color 
   background-color: #60a9e6 !important;
+
+  /* Apply the background gradient 
+  background-image: radial-gradient(circle, rgba(135, 206, 235, 1) 0%, rgba(255, 255, 255, 0.6) 60%), 
+                    url('clouds.jpg')!important;
+
+  /* Ensure the background covers the entire container 
+  background-size: cover;
+  
+  /* Set the background position to the center initially 
+  background-position: center center;
+
+  /* Set animation for the moving sky effect 
+  animation: skyAnimation 30s linear infinite;
 }
+
+/* Define the animation 
+@keyframes skyAnimation {
+  0% {
+    background-position: center top;
+  }
+  50% {
+    background-position: center bottom;
+  }
+  100% {
+    background-position: center top;
+  }
+}*/
+.bg-primary {
+  /* Fallback background color */
+  background-color: #60a9e6 !important;
+
+  /* Apply the background gradient with the image */
+  background-image: radial-gradient(circle, rgba(135, 206, 235, 1) 0%, rgba(255, 255, 255, 0.6) 60%), 
+                    url('Background.jpg')!important;
+
+  /* Ensure the background covers the entire container */
+  background-size: cover;
+  
+  /* Set the background position to the center initially */
+  background-position: center top;
+
+  /* Set animation for the moving sky effect */
+  animation: skyAnimation 30s linear infinite;
+}
+
+/* Define the animation to move the sky */
+@keyframes skyAnimation {
+  0% {
+    background-position: center top;
+  }
+  50% {
+    background-position: center center;
+  }
+  100% {
+    background-position: center bottom;
+  }
+}
+
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,

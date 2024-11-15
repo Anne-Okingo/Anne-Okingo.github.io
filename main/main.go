@@ -4,10 +4,24 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	// "my-portfolio/Backend/handlers"
 	"my-portfolio/Backend/endpoint"
 )
 
 func main() {
+	// mux := http.NewServeMux()
+
+	// mux.HandleFunc("/", handlers.HomeHandler)
+
+	// port := ":3000"
+
+	// fmt.Println("server runing @http://localhost:3000\n==============================")
+	// err := http.ListenAndServe(port,mux)
+	// if err != nil{
+	// 	log.Fatal("Error server failed",err)
+	// }
+
 	// Register routes directly with the default HTTP multiplexer
 	endpoint.RegisterRoutes(http.DefaultServeMux)
 

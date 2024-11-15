@@ -1,18 +1,8 @@
-/******* Bootstrap Theming ********/
-/*!
- * Bootstrap v4.5.3 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #9ed6e7;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
+  
+  --skyblue: #9ed6e7;
+ 
   --green: #28a745;
   --teal: #20c997;
   --cyan: #17a2b8;
@@ -6364,44 +6354,13 @@ a.close.disabled {
 .align-text-top {
   vertical-align: text-top !important;
 }
-/*
-.bg-primary {
-  /* Fallback background color 
-  background-color: #60a9e6 !important;
-
-  /* Apply the background gradient 
-  background-image: radial-gradient(circle, rgba(135, 206, 235, 1) 0%, rgba(255, 255, 255, 0.6) 60%), 
-                    url('clouds.jpg')!important;
-
-  /* Ensure the background covers the entire container 
-  background-size: cover;
-  
-  /* Set the background position to the center initially 
-  background-position: center center;
-
-  /* Set animation for the moving sky effect 
-  animation: skyAnimation 30s linear infinite;
-}
-
-/* Define the animation 
-@keyframes skyAnimation {
-  0% {
-    background-position: center top;
-  }
-  50% {
-    background-position: center bottom;
-  }
-  100% {
-    background-position: center top;
-  }
-}*/
 .bg-primary {
   /* Fallback background color */
   background-color: #60a9e6 !important;
 
   /* Apply the background gradient with the image */
   background-image: radial-gradient(circle, rgba(135, 206, 235, 1) 0%, rgba(255, 255, 255, 0.6) 60%), 
-                    url('Background.jpg')!important;
+                    url(Background.jpg)!important;
 
   /* Ensure the background covers the entire container */
   background-size: cover;

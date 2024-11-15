@@ -9,7 +9,7 @@ import (
 // HomeHandler handles the homepage route '/'
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodGet {
-		renders.RenderTemplate(w, "home.page.html", nil)
+		renders.RenderTemplate(w, "index.html", nil)
 	} else {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 	}
@@ -32,3 +32,18 @@ func ServerErrorHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusInternalServerError)
 	renders.RenderTemplate(w, "servererror.page.html", nil)
 }
+
+// package handlers
+
+// import (
+// 	"my-portfolio/Backend/renders"
+// 	"net/http"
+// )
+
+// func HomeHandler(w http.ResponseWriter, r*http.Request){
+// 	if r.Method == http.MethodGet{
+// 		renders.RenderTemplate(w,"index.html",nil)
+// 	}else{
+// 		http.Error(w, "Method no allowed",http.StatusMethodNotAllowed)
+// 	}
+// }

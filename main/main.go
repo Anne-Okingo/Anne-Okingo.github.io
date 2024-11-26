@@ -5,11 +5,11 @@ import (
 	"log"
 	"net/http"
 
-	// "my-portfolio/Backend/handlers"
 	"my-portfolio/Backend/endpoint"
 )
 
 func main() {
+	// without middleware
 	// mux := http.NewServeMux()
 
 	// mux.HandleFunc("/", handlers.HomeHandler)
@@ -24,7 +24,6 @@ func main() {
 
 	// Register routes directly with the default HTTP multiplexer
 	endpoint.RegisterRoutes(http.DefaultServeMux)
-
 	// Add middleware if necessary
 	handler := endpoint.RouteChecker(http.DefaultServeMux)
 

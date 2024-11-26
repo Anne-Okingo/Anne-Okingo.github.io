@@ -74,25 +74,3 @@ func renderServerErrorTemplate(w http.ResponseWriter, errMsg string) {
 	w.WriteHeader(http.StatusNotFound)
 	t.Execute(w, data)
 }
-
-// package renders
-
-// import (
-// 	"html/template"
-// 	"net/http"
-// )
-
-// func RenderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
-// 	tempPath := tmpl
-
-// 	t, err := template.ParseFiles(tempPath)
-// 	if err != nil {
-// 		http.Error(w, "Error loading template"+err.Error(), http.StatusInternalServerError)
-// 		return
-// 	}
-
-// 	err = t.Execute(w, data)
-// 	if err != nil {
-// 		http.Error(w, "Error Rendering template"+err.Error(), http.StatusInternalServerError)
-// 	}
-// }

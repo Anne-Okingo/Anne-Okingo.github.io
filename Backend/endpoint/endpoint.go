@@ -29,15 +29,3 @@ func RegisterRoutes(mux *http.ServeMux) {
 		handlers.HomeHandler(w, r)
 	})
 }
-
-// package endpoint
-
-// import (
-// 	"net/http"
-
-// 	"my-portfolio/Backend/handlers"
-// )
-
-// func RegisterRoutes(mux *http.ServeMux) {
-// 	mux.HandleFunc("/", handlers.HomeHandler)
-// }

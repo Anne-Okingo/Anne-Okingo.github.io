@@ -79,28 +79,43 @@
             $(this).css('width', width + '%');
         });
 
-        // Trigger progress bar animation when skill section comes into view
-        $('.skill').waypoint(function () {
-            $('.progress-bar').each(function () {
-                const width = $(this).attr('aria-valuenow');
-                $(this).animate({ width: width + '%' }, 1500); // 1500ms for animation duration
-            });
-        }, { offset: '80%' }); // Trigger when 80% of the skill section is in view
+        // Trigger progress bar animation on scroll
+        $(window).scroll(function() {
+            var skillSection = $('#skill');
+            if (skillSection.length) {
+                var skillTop = skillSection.offset().top;
+                var skillHeight = skillSection.outerHeight();
+                var windowTop = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                
+                if (windowTop + windowHeight > skillTop + skillHeight * 0.2) {
+                    $('.progress-bar').each(function () {
+                        if (!$(this).hasClass('animated')) {
+                            const width = $(this).attr('aria-valuenow');
+                            $(this).animate({ width: width + '%' }, 1500);
+                            $(this).addClass('animated');
+                        }
+                    });
+                }
+            }
+        });
     });
     
     
 
 
-    // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
+    // Portfolio filter (simplified without isotope)
     $('#portfolio-flters li').on('click', function () {
         $("#portfolio-flters li").removeClass('active');
         $(this).addClass('active');
-
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        
+        var filterValue = $(this).data('filter');
+        if (filterValue === '*') {
+            $('.portfolio-item').show();
+        } else {
+            $('.portfolio-item').hide();
+            $(filterValue).show();
+        }
     });
     
     

@@ -27,53 +27,15 @@
             overflow: hidden;
         }
 
-        #particleCanvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
         .hero-content {
             position: relative;
             z-index: 2;
         }
 
-        .image-container {
-            width: 300px;
-            height: 300px;
-            margin: 0 auto;
-            position: relative;
-            border-radius: 50%;
-        }
-
-        .fade-in-text {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .fade-in-text:nth-child(1) { animation-delay: 2s; }
-        .fade-in-text:nth-child(2) { animation-delay: 2.5s; }
-        .fade-in-text:nth-child(4) { animation-delay: 3s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Particle styles */
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: #00d4ff;
-            border-radius: 50%;
-            box-shadow: 0 0 6px #00d4ff;
+        .profile-image {
+            max-width: 100%;
+            /* height: auto; */
+            /* filter: contrast(1.2) saturate(0.8) brightness(1.1) hue-rotate(10deg); */
         }
 
         @media (max-width: 768px) {
@@ -132,20 +94,17 @@
 
     <!-- Header Start -->
     <div class="container-fluid hero-section d-flex align-items-center mb-5 py-5" id="home">
-        <canvas id="particleCanvas"></canvas>
         <div class="container hero-content">
-            <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <div id="imageContainer" class="image-container">
-                        <!-- Particles will form the image here -->
-                    </div>
+            <div class="row align-items-center" style="background: transparent;">
+                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0" style="background: transparent; border: none;">
+                    <img src="img/profile.jpg" alt="Alice Okingo" class="profile-image">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-3 fade-in-text">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2 fade-in-text" style="-webkit-text-stroke: 2px #ffffff;">Alice Okingo</h1>
+                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>
+                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Alice Okingo</h1>
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">An Apprentice Software Developer, Web Designer, Project Officer, Philanthropist, And More</div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5 fade-in-text">
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="Alice Anne Awuor Okingo CV FAWE 1-1.pdf" class="btn btn-outline-light mr-5" download="Alice Anne Awuor Okingo CV FAWE 1-1.pdf">Download CV</a>
                     </div>
                 </div>
@@ -744,154 +703,7 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     
-    <!-- Particle Animation Script -->
-    <script>
-        class ParticleImageAnimation {
-            constructor() {
-                this.canvas = document.getElementById('particleCanvas');
-                this.ctx = this.canvas.getContext('2d');
-                this.particles = [];
-                this.imageData = null;
-                this.animationPhase = 'scatter'; // scatter -> gather -> formed
-                
-                this.init();
-            }
-            
-            init() {
-                this.resizeCanvas();
-                this.loadImage();
-                window.addEventListener('resize', () => this.resizeCanvas());
-            }
-            
-            resizeCanvas() {
-                this.canvas.width = window.innerWidth;
-                this.canvas.height = window.innerHeight;
-            }
-            
-            loadImage() {
-                const img = new Image();
-                img.crossOrigin = 'anonymous';
-                img.onload = () => {
-                    this.processImage(img);
-                    this.createParticles();
-                    this.animate();
-                };
-                img.src = 'img/profile.jpg';
-            }
-            
-            processImage(img) {
-                const tempCanvas = document.createElement('canvas');
-                const tempCtx = tempCanvas.getContext('2d');
-                const size = 200;
-                
-                tempCanvas.width = size;
-                tempCanvas.height = size;
-                
-                // Draw circular clipped image
-                tempCtx.beginPath();
-                tempCtx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
-                tempCtx.clip();
-                tempCtx.drawImage(img, 0, 0, size, size);
-                
-                this.imageData = tempCtx.getImageData(0, 0, size, size);
-            }
-            
-            createParticles() {
-                const { data, width, height } = this.imageData;
-                const centerX = this.canvas.width / 2 - 150;
-                const centerY = this.canvas.height / 2;
-                
-                // Sample pixels for particles
-                for (let y = 0; y < height; y += 3) {
-                    for (let x = 0; x < width; x += 3) {
-                        const index = (y * width + x) * 4;
-                        const alpha = data[index + 3];
-                        
-                        if (alpha > 128) {
-                            const particle = {
-                                // Target position (where particle should end up)
-                                targetX: centerX + x * 1.5,
-                                targetY: centerY + y * 1.5 - 150,
-                                
-                                // Current position (starts scattered)
-                                x: Math.random() * this.canvas.width,
-                                y: Math.random() * this.canvas.height,
-                                
-                                // Color from image
-                                r: data[index],
-                                g: data[index + 1],
-                                b: data[index + 2],
-                                
-                                // Animation properties
-                                vx: 0,
-                                vy: 0,
-                                size: Math.random() * 2 + 1,
-                                delay: Math.random() * 2000
-                            };
-                            
-                            this.particles.push(particle);
-                        }
-                    }
-                }
-                
-                // Start gathering animation after delay
-                setTimeout(() => {
-                    this.animationPhase = 'gather';
-                }, 1000);
-            }
-            
-            animate() {
-                this.ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
-                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-                
-                const currentTime = Date.now();
-                
-                this.particles.forEach(particle => {
-                    if (this.animationPhase === 'gather' && currentTime > particle.delay) {
-                        // Move towards target position
-                        const dx = particle.targetX - particle.x;
-                        const dy = particle.targetY - particle.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance > 1) {
-                            particle.vx += dx * 0.001;
-                            particle.vy += dy * 0.001;
-                            
-                            // Add some easing
-                            particle.vx *= 0.98;
-                            particle.vy *= 0.98;
-                            
-                            particle.x += particle.vx;
-                            particle.y += particle.vy;
-                        } else {
-                            // Snap to target when close enough
-                            particle.x = particle.targetX;
-                            particle.y = particle.targetY;
-                        }
-                    }
-                    
-                    // Draw particle
-                    this.ctx.fillStyle = `rgba(${particle.r}, ${particle.g}, ${particle.b}, 0.8)`;
-                    this.ctx.beginPath();
-                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                    this.ctx.fill();
-                    
-                    // Add glow effect
-                    this.ctx.shadowColor = `rgb(${particle.r}, ${particle.g}, ${particle.b})`;
-                    this.ctx.shadowBlur = 3;
-                    this.ctx.fill();
-                    this.ctx.shadowBlur = 0;
-                });
-                
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-        
-        // Initialize when page loads
-        window.addEventListener('load', () => {
-            new ParticleImageAnimation();
-        });
-    </script>
+
 </body>
 
 </html>

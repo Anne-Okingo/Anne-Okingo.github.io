@@ -5,10 +5,16 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/joho/godotenv"
 	"my-portfolio/Backend/handlers"
 )
 
 func main() {
+	// Load .env file
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found")
+	}
+
 	// Serve all files in current directory
 	fs := http.FileServer(http.Dir("."))
 	http.Handle("/", fs)

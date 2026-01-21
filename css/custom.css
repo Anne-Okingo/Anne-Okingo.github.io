@@ -2,7 +2,7 @@
     /* Color Palette - Light */
     --bg-color: #ffffff;
     --surface-color: #f8f9fa;
-    --text-primary: #1e293b;
+    --text-primary: #5a5d67 !important;
     --text-secondary: #64748b;
     --accent-color: #0d9488;
     /* Teal 600 */

@@ -7,9 +7,11 @@
 
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -19,157 +21,56 @@
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
-    <style>
-        /* Dark/Light Mode Variables */
-        :root {
-            --bg-color: linear-gradient(135deg, #82a3a7 0%, #505e6e 50%, #6d8291 100%);
-            --text-color: #343a40;
-            --hero-bg: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
-            --hero-text: #343a40;
-            --navbar-bg: rgba(255, 255, 255, 0.95);
-            --section-bg: #ffffff;
-        }
+    <link href="css/custom.css" rel="stylesheet">
 
-        [data-theme="dark"] {
-            --bg-color: linear-gradient(135deg, #82a3a7 0%, #505e6e 50%, #6d8291 100%);
-            --text-color: #ffffff;
-            --hero-bg: linear-gradient(135deg, #82a3a7 0%, #505e6e 50%, #6d8291 100%);
-            --hero-text: #ffffff;
-            --navbar-bg: #435253;
-            --section-bg: linear-gradient(135deg, #82a3a7 0%, #505e6e 50%, #6d8291 100%);
-        }
-
-        body {
-            background: var(--bg-color);
-            color: var(--text-color);
-            transition: all 0.3s ease;
-        }
-
-        .navbar {
-            background-color: var(--navbar-bg) !important;
-        }
-
-        .container-fluid:not(.hero-section) {
-            background: var(--section-bg);
-        }
-
-        /* Hero Section Styles */
-        .hero-section {
-            background: var(--hero-bg);
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section .text-white {
-            color: var(--hero-text) !important;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-image {
-            max-width: 100%;
-            border: none;
-            outline: none;
-            /* filter: contrast(1.2) saturate(0.8) brightness(1.1) hue-rotate(10deg); */
-            /* box-shadow: 0 0 30px rgba(96, 169, 230, 0.3); */
-        }
-
-        /* Theme Toggle Button */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            background: #ffffff;
-            color: #000000;
-            border: 2px solid #000000;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        [data-theme="dark"] .theme-toggle {
-            background: #000000;
-            color: #ffffff;
-            border: 2px solid #ffffff;
-        }
-
-        @media (max-width: 991px) {
-            .theme-toggle {
-                top: 15px;
-                right: 15px;
-                width: 45px;
-                height: 45px;
-            }
-        }
-
-        .typed-text {
-            font-family: 'Roboto Mono', monospace;
-        }
-
-        .typed-text-output {
-            font-family: 'Roboto Mono', monospace;
-        }
-
-        @media (max-width: 768px) {
-            .image-container {
-                width: 250px;
-                height: 250px;
-            }
-        }
-    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
     <!-- Theme Toggle Button -->
-    <button class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-moon" id="theme-icon"></i>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
     </button>
-    
+
     <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-primary">Alice</span>Okingo</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Experience</a>
-                <a href="#skill" class="nav-item nav-link">Skill</a>
-                <a href="#service" class="nav-item nav-link">Service</a>
-                <a href="#My Work" class="nav-item nav-link">My Work</a>
-                <a href="#testimonial" class="nav-item nav-link">Reviews</a>
-                <a href="#blog" class="nav-item nav-link">Blog</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 display-5"><span class="text-gradient">Alice</span>Okingo</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="#home" class="nav-item nav-link active">Home</a>
+                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a href="#qualification" class="nav-item nav-link">Experience</a>
+                    <a href="#skill" class="nav-item nav-link">Skill</a>
+                    <a href="#services" class="nav-item nav-link">Services</a>
+                    <a href="#portfolio" class="nav-item nav-link">Work</a>
+                    <a href="#blog" class="nav-item nav-link">Blog</a>
+                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                </div>
             </div>
-            <a href="" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
         </div>
     </nav>
     <!-- Navbar End -->
 
 
     <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>        
+                    </button>
                     <!-- 16:9 aspect ratio -->
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
@@ -178,18 +79,22 @@
     <!-- Video Modal End -->
 
     <!-- Header Start -->
-    <div class="container-fluid hero-section d-flex align-items-center mb-5 py-5" id="home">
+    <div class="container-fluid hero-section" id="home">
         <div class="container hero-content">
-            <div class="row align-items-center" style="background: transparent;">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0" style="background: transparent; border: none;">
-                    <img src="img/profile.jpg" alt="Alice Okingo" class="profile-image">
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-lg-2">
+                    <img src="img/profile1.jpg" alt="Alice Okingo" class="img-fluid profile-image">
                 </div>
-                <div class="col-lg-7 text-center text-lg-left">
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Anne Okingo</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Founder-HEAL-Impact, Full-stack Developer, Data Scientist, Tech-For-Social-Good Enthusiast </div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="Alice Anne Awuor Okingo CV FAWE 1-1.pdf" class="btn mr-5" style="border: 2px solid var(--hero-text); color: var(--hero-text); background: transparent;" download="Alice Anne Awuor Okingo CV FAWE 1-1.pdf">Download CV</a>
+                <div class="col-lg-7 order-lg-1 text-center text-lg-left">
+                    <h1 class="display-3 font-weight-bold mb-3">Hi, I'm <span class="text-gradient">Anne Okingo</span>
+                    </h1>
+                    <h2 class="h3 mb-4"><span class="typed-text-output text-gradient"></span></h2>
+                    <div class="typed-text d-none">Full-stack Developer, Data Scientist, Tech-For-Social-Good Enthusiast
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-3">
+                        <a href="Alice Anne Awuor Okingo CV FAWE 1-1.pdf" class="btn btn-primary-custom mr-3"
+                            download>Download CV</a>
+                        <a href="#contact" class="btn btn-outline-custom">Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -198,116 +103,87 @@
     <!-- Header End -->
 
 
-<!-- About Start -->
-<div class="container-fluid py-5" id="about">
-    <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-            <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-            <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-5 pb-4 pb-lg-0">
-                <img class="img-fluid rounded w-100" src="img/about.jpg" alt="">
-            </div>
-            <div class="col-lg-7">
-                <h3 class="mb-4">Apprentice Software Developer...Tech For Social Good Enthusiast</h3>
-                <p class="justified-text">
-                    Passionate apprentice software developer, web designer, project officer, and tech-for-good enthusiast with a rich background in program management and community-centered impact projects management and coordination.
-                </p>
-                <p class="justified-text">
-                    Experienced in empowering vulnerable communities, addressing gender and social inequities, and implementing sustainable solutions. 
-                </p>
-                <p class="justified-text">
-                    A driven professional focused on combining technology and human-centered design to tackle pressing social issues and promote inclusive  and sustainable development.
-                </p>
-                <div class="row mb-3">
-                    <div class="col-sm-6 py-2"><h6>Name: <span class="text-secondary">Alice Anne Awuor Okingo</span></h6></div>
-                    <div class="col-sm-6 py-2"><h6>Birthday: <span class="text-secondary">23 March 1993</span></h6></div>
-                    <!-- <div class="col-sm-6 py-2"><h6>Skill Level: <span class="text-secondary">Expert</span></h6></div> -->
-                    <!-- <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">10 Years</span></h6></div> -->
-                    <div class="col-sm-6 py-2"><h6>Phone: <span class="text-secondary">+254 706 529 920</span></h6></div>
-                    <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">annekadiso@gmail.com</span></h6></div>
-                    <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">3324-40100 Kisumu</span></h6></div>
-                    <div class="col-sm-6 py-2"><h6>Work: <span class="text-secondary">Available</span></h6></div>
+    <!-- About Start -->
+    <div class="container-fluid py-5 section-padding" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid rounded w-100 shadow-lg profile-image" src="img/about.jpg" alt="">
                 </div>
-                <a href="" class="btn btn-outline-primary mr-4">Hire Me</a>
-                <a href="" class="btn btn-outline-primary">Learn More</a>
+                <div class="col-lg-7">
+                    <h6 class="text-uppercase text-gradient font-weight-bold mb-3">My Bio</h6>
+                    <h1 class="mb-4">Alice Anne Awuor Okingo</h1>
+                    <p>Alice Anne Awuor Okingo is a Kenyan software developer and data scientist with seven years of
+                        experience at the intersection of technology, gender equality, and community development. She
+                        specializes in using data and digital tools to amplify voices of underrepresented women and
+                        girls in rural communities.</p>
+                    <p>Currently a Software Developer at Zone 01 Kisumu, Anne founded Heal-Impact in 2024 to provide
+                        psychosocial support for GBV survivors in rural Kenya while leveraging data insights for gender
+                        prevention initiatives. She served as Project Manager at the Institute for Faith and Gender
+                        Empowerment (2019-2024), leading programs strengthening women's civic participation. As Project
+                        Manager for Code Ssipers, she mentors young developers and created Afyakuu, an AI-driven tool
+                        for cancer prediction in resource-limited settings.</p>
+                    <p>Her work advances SDGs 5, 10, 16, and 17, translating localized gender data into compelling
+                        narratives that empower youth civic engagement and evidence-based advocacy in community
+                        development with software engineering, creating impactful and scalable solutions for social
+                        good.</p>
+                    <div class="row mb-4">
+                        <div class="col-sm-6 py-2"><strong>Name:</strong> Alice Anne Awuor Okingo</div>
+                        <div class="col-sm-6 py-2"><strong>Email:</strong> annekadiso@gmail.com</div>
+                        <div class="col-sm-6 py-2"><strong>Location:</strong> Kisumu, Kenya</div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline-custom mr-4">Hire Me</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- About End -->
+    <!-- About End -->
 
 
 
     <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
+    <div class="container-fluid py-5 section-padding bg-surface" id="qualification">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
-            </div>
-            <div class="row align-items-center">
+            <div class="row">
                 <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                    <h3 class="mb-4 text-gradient">Education</h3>
+                    <div class="pl-4 border-left" style="border-color: var(--border-color) !important;">
+                        <div class="experience-card">
+                            <i class="fas fa-graduation-cap timeline-dot"></i>
                             <h5 class="font-weight-bold mb-1">Bachelor Degree Commerce</h5>
-                            <p class="mb-2"><strong>Kirinyaga University</strong> | <small>2013 - 2017</small></p>
-                            <p>Developed a strong foundation in business principles, financial management, and strategic planning. Specialized in marketing, with practical coursework in business operations, management, and decision-making. This program equipped me with analytical skills and a solid understanding of the commercial landscape, preparing me for roles in business management and marketing.</p>
+                            <p class="mb-2 text-primary"><strong>Kirinyaga University</strong> | <small>2013 -
+                                    2017</small></p>
+                            <p>Specialized in marketing and business operations.</p>
                         </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Project Planning Monitoring And Evaluation</h5>
-                            <p class="mb-2"><strong>Corat Africa</strong> | <small>2022 - 2023</small></p>
-                            <p>Specialized in advanced methods for tracking and assessing project outcomes, emphasizing data-driven decision-making and real-time evaluation techniques. Enhanced expertise in project monitoring frameworks, impact analysis, and risk mitigation strategies.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">German B1 Level</h5>
-                            <p class="mb-2"><strong>Goethe Institute</strong> | <small>2017 - 2020</small></p>
-                            <p>Achieved proficiency in German at the B1 level, enabling effective communication and cultural understanding in professional and personal contexts. This training has enriched my multicultural experience and linguistic adaptability, essential in international settings.</p>
+                        <div class="experience-card">
+                            <i class="fas fa-certificate timeline-dot"></i>
+                            <h5 class="font-weight-bold mb-1">Project Planning M&E</h5>
+                            <p class="mb-2 text-primary"><strong>Corat Africa</strong> | <small>2022 - 2023</small></p>
+                            <p>Advanced project monitoring and impact analysis.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Web Designer</h5>
-                            <p class="mb-2"><strong>Kanthe Leather</strong> | <small>2024 </small></p>
-                            <p>Led the design and development of responsive, user-friendly website, enhancing user engagement by 30%.</p>
-                        </p>Improved the website's user experience and interface by leveraging qualitative research findings and applying user-centric design principles, demonstrating a strong foundation in understanding user behavior and needs. </p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                    <h3 class="mb-4 text-gradient">Experience</h3>
+                    <div class="pl-4 border-left" style="border-color: var(--border-color) !important;">
+                        <div class="experience-card">
+                            <i class="fas fa-laptop-code timeline-dot"></i>
                             <h5 class="font-weight-bold mb-1">Apprentice Software Developer</h5>
-                            <p class="mb-2"><strong>Zone 01 Kisumu</strong> | <small>2024 - present</small></p>
-                            <p>I specialize in Go and JavaScript, mastering procedural and functional programming, and applying concurrency with Go routines. I build robust systems using effective error handling and optimized algorithms.</p>
-
-                            <p>My expertise includes dynamic programming, statistical models like linear regression, and leveraging hash maps for data parsing and tracking relationships in projects like Groupie Trackers.</p>
-                            
-                            <p>I have hands-on experience with command-line tools like Netcat for networking and debugging, as well as integrating REST APIs for scalable backend systems. I design modern, user-friendly interfaces using HTML, CSS, and JavaScript.</p>
-                            
-                            <p>Through UX research and data visualization, I create user-centric solutions, automating data parsing to extract meaningful insights. I am proficient unit testing in Go, and basic CI/CD practices.</p>
-                                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <p class="mb-2 text-primary"><strong>Zone 01 Kisumu</strong> | <small>2024 - present</small>
+                            </p>
+                            <p>Specializing in Go and JavaScript, building robust systems and statistical models.</p>
+                        </div>
+                        <div class="experience-card">
+                            <i class="fas fa-briefcase timeline-dot"></i>
+                            <h5 class="font-weight-bold mb-1">Web Designer</h5>
+                            <p class="mb-2 text-primary"><strong>Kanthe Leather</strong> | <small>2024</small></p>
+                            <p>Led design and development of responsive websites.</p>
+                        </div>
+                        <div class="experience-card">
+                            <i class="fas fa-users timeline-dot"></i>
                             <h5 class="font-weight-bold mb-1">Program Officer</h5>
-                            <p class="mb-2"><strong>Institute for Faith And Gender Empowerment(IFAGE)</strong> | <small>2019 - 2013</small></p>
-                            <p>Led gender empowerment initiatives addressing the intersection of gender inequality, climate change, and poverty.
-                            </p>Engaged diverse communities, including vulnerable women, youth, and faith leaders, to drive culturally sensitive and impactful solutions in adressing Sexual and Gender-Based Violence in sub-saharan Africa.</p>
-                            </p>Designed and implemented comprehensive monitoring and evaluation frameworks, optimizing program outcomes through data-driven insights.</p>
-                            </p>Built partnerships with NGOs, government agencies, and community leaders to expand the reach and effectiveness of organizational initiatives.</p>
-                        </div> <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Digital Marketing Specialist</h5>
-                            <p class="mb-2"><strong></strong>BrandOrbit<small>2016- 2018</small></p>
-                            <p>Designed and executed online marketing campaigns that boosted client engagement by 45%.</p>
-                            </p>Managed SEO strategies,content managing that led to increase in search visibility and driving traffic growth by 60%.</p>
-                            </p>Analyzed campaign performance metrics, delivering actionable insights to clients for continuous improvement.</p>
+                            <p class="mb-2 text-primary"><strong>IFAGE</strong> | <small>2019 - 2023</small></p>
+                            <p>Led gender empowerment initiatives and M&E frameworks.</p>
                         </div>
                     </div>
                 </div>
@@ -316,290 +192,363 @@
     </div>
     <!-- Qualification End -->
 
-<!-- Skill Start -->
-<div class="container-fluid py-5" id="skill">
-    <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-            <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-            <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-        </div>
-        <div class="row align-items-center">
-            <!-- Skill Section -->
-            <div class="col-md-6">
-                <div class="skill mb-4">
-                   
-                </div>
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">HTML</h6>
-                        <!-- <h6 class="font-weight-bold">65%</h6> -->
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">CSS</h6>
-                        <!-- <h6 class="font-weight-bold">50%</h6> -->
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
+    <!-- Skill Start -->
+    <div class="container-fluid py-5 section-padding" id="skill">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-gradient font-weight-bold">Skills</h6>
+                <h1 class="display-4">Technical Proficiency</h1>
             </div>
-            <div class="col-md-6">  <div class="skill mb-4">
-                <div class="d-flex justify-content-between">
-                    <h6 class="font-weight-bold">golang</h6>
-                    <!-- <h6 class="font-weight-bold">50%</h6> -->
-                </div>
-                <div class="progress">
-                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">Javascript</h6>
-                        <!-- <h6 class="font-weight-bold">10%</h6> -->
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="skill-card fade-in">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h6 class="font-weight-bold">HTML & CSS</h6>
+                            <h6 class="font-weight-bold">95%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 95%"></div>
+                        </div>
                     </div>
                 </div>
-    
-
-
-
-
-
-
-
-
+                <div class="col-lg-6">
+                    <div class="skill-card fade-in">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h6 class="font-weight-bold">Golang</h6>
+                            <h6 class="font-weight-bold">75%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skill-card fade-in">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h6 class="font-weight-bold">JavaScript</h6>
+                            <h6 class="font-weight-bold">70%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 70%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Skill End -->
+    <!-- Skill End -->
 
-<!-- Services Start -->
-<div class="container-fluid pt-5" id="services">
-    <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center mb-5">
-            <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Services</h1>
-            <h1 class="position-absolute text-uppercase text-primary">My Services</h1>
-        </div>
-        
-        <!-- Software Development -->
-        <div class="row">
-
-            <!-- Web Design -->
-            <div class="col-lg-6 mb-5">
-                <div class="service-item rounded p-4">
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="service-icon bg-primary text-white mr-3">
+    <!-- Services Start -->
+    <div class="container-fluid py-5 section-padding" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-gradient font-weight-bold">Services</h6>
+                <h1 class="display-4">What I Offer</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="service-item fade-in">
+                        <div class="service-icon text-white mb-4">
                             <i class="fa fa-2x fa-palette"></i>
                         </div>
-                        <h4 class="font-weight-bold m-0">Web Design</h4>
+                        <h4 class="font-weight-bold mb-3">Web Design</h4>
+                        <p>Creating visually stunning and user-centric websites that align with modern design
+                            principles. Focusing on responsive, accessible, and brand-aligned experiences.</p>
                     </div>
-                    <p>Creating visually stunning and user-centric websites that align with modern design principles. I focus on delivering responsive, accessible, and brand-aligned web experiences that drive engagement and conversions.</p>
-                    
-                    <h5 class="font-weight-bold mb-3">What I offer:</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-primary mr-2"></i>Custom responsive website designs</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>UI/UX design and prototyping</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Mobile-first approach</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Brand identity integration</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Website redesign and modernization</li>
-                    </ul>
-                    
-                    <h5 class="font-weight-bold mb-3">Tools & Technologies:</h5>
-                    <p>HTML5, CSS3, JavaScript, Bootstrap, Figma, Miro Canva</p>
-                    
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
                 </div>
-            </div>
-
-            <!-- Web Development -->
-            <div class="col-lg-6 mb-5">
-                <div class="service-item rounded p-4">
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="service-icon bg-primary text-white mr-3">
+                <div class="col-lg-6 mb-4">
+                    <div class="service-item fade-in">
+                        <div class="service-icon text-white mb-4">
                             <i class="fa fa-2x fa-code"></i>
                         </div>
-                        <h4 class="font-weight-bold m-0">Web Development</h4>
+                        <h4 class="font-weight-bold mb-3">Web Development</h4>
+                        <p>Full-stack web development services delivering scalable, secure, and high-performance web
+                            applications using Go, JavaScript, and modern frameworks.</p>
                     </div>
-                    <p>Full-stack web development services delivering scalable, secure, and high-performance web applications. I combine technical expertise with business understanding to create solutions that meet your specific needs.</p>
-                    
-                    <h5 class="font-weight-bold mb-3">What I offer:</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-primary mr-2"></i>Full-stack web application development</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>E-commerce solutions</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Content Management Systems (CMS)</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Progressive Web Apps (PWAs)</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Performance optimization</li>
-                    </ul>
-                    
-                    <h5 class="font-weight-bold mb-3">Tools & Technologies:</h5>
-                    <!-- <p>React.js, Node.js</p> -->
-                    <p>go, javascript, HTML, CSS</p>
-                    <!-- Express.js, MongoDB, MySQL, REST APIs, GraphQL -->
-                    
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
                 </div>
-            </div>
-
-            <!-- Project Management -->
-            <div class="col-lg-6 mb-5">
-                <div class="service-item rounded p-4">
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="service-icon bg-primary text-white mr-3">
+                <div class="col-lg-6 mb-4">
+                    <div class="service-item fade-in">
+                        <div class="service-icon text-white mb-4">
                             <i class="fa fa-2x fa-tasks"></i>
                         </div>
-                        <h4 class="font-weight-bold m-0">Project Management</h4>
+                        <h4 class="font-weight-bold mb-3">Project Management</h4>
+                        <p>Leveraging over 5 years of program management experience to deliver successful technical and
+                            community-focused projects.</p>
                     </div>
-                    <p>Leveraging over 5 years of program management experience to deliver successful project outcomes. Specialized in both technical and community-focused projects with proven methodologies.</p>
-                    
-                    <h5 class="font-weight-bold mb-3">What I offer:</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-primary mr-2"></i>Project planning and execution</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Project planning, Moniroring and Evaluation</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Stakeholder management and communication</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Risk assessment and mitigation</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Budget management and resource allocation</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Team leadership and coordination</li>
-                    </ul>
-                    
-                    <h5 class="font-weight-bold mb-3">Tools & Technologies:</h5>
-                    <p>Microsoft Project, Microsoft 365, Google Workspace</p>
-                    
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
                 </div>
-            </div>
-
-            <!-- Digital Marketing & SEO -->
-            <div class="col-lg-6 mb-5">
-                <div class="service-item rounded p-4">
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="service-icon bg-primary text-white mr-3">
+                <div class="col-lg-6 mb-4">
+                    <div class="service-item fade-in">
+                        <div class="service-icon text-white mb-4">
                             <i class="fa fa-2x fa-search"></i>
                         </div>
-                        <h4 class="font-weight-bold m-0">Digital Marketing & SEO</h4>
+                        <h4 class="font-weight-bold mb-3">Digital Marketing & SEO</h4>
+                        <p>Comprehensive digital marketing solutions focusing on organic traffic, content strategy, and
+                            data-driven performance tracking.</p>
                     </div>
-                    <p>Comprehensive digital marketing solutions with a focus on driving organic traffic and enhancing online presence. Marketing expertise combined with technical knowledge for optimal results.</p>
-                    
-                    <h5 class="font-weight-bold mb-3">What I offer:</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-primary mr-2"></i>Search Engine Optimization (SEO)</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Content strategy and creation</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Social media management</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Email marketing campaigns</li>
-                        <li><i class="fa fa-check text-primary mr-2"></i>Analytics and performance tracking</li>
-                    </ul>
-                    
-                    <h5 class="font-weight-bold mb-3">Tools & Technologies:</h5>
-                    <p>Google Analytics, MailChimp, Social Media Platforms, SEO Tools</p>
-                    
-                    <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Services End -->
+    <!-- Services End -->
 
 
     <!-- Portfolio Start -->
-    <div class="container-fluid pt-5 pb-3" id="portfolio">
+    <div class="container-fluid py-5 section-padding bg-surface" id="portfolio">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Gallery</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Work</h1>
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-gradient font-weight-bold">Portfolio</h6>
+                <h1 class="display-4">Recent Projects</h1>
             </div>
             <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
-                        
-                        <!-- Make "Design" clickable -->
-                        <li class="btn btn-sm btn-outline-primary m-1">
-                            <a href="https://www.figma.com/proto/34OeBhDFzQLz6lGGoTRKqv/Anne-Okingo-UI-UX%E2%80%A8cover?node-id=5-118&t=L2vJlgIP1ZO4teA7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" 
-                            target="_blank" style="text-decoration: none; color: inherit;">
-                                Design
-                            </a>
-                        </li>
-                        
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Development</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Tech for Social Good</li>
+                <div class="col-12 text-center mb-4">
+                    <ul class="list-inline" id="portfolio-flters">
+                        <li class="btn btn-outline-custom m-1 active" data-filter="*">All</li>
+                        <li class="btn btn-outline-custom m-1" data-filter=".design">Design</li>
+                        <li class="btn btn-outline-custom m-1" data-filter=".data-science">Data Science</li>
+                        <li class="btn btn-outline-custom m-1" data-filter=".social-good">Tech for Social Good</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-1.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://learn.zone01kisumu.ke/git/aokingo/ascii-art-justify.git" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+                <!-- DESIGN PROJECTS -->
+                <!-- Design 1 -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item design">
+                    <div class="position-relative overflow-hidden rounded mb-2 h-100 shadow-sm">
+                        <img class="img-fluid w-100" src="img/uiux-1.jpg" alt="Kanthe Leather">
+                        <div class="portfolio-info">
+                            <h5 class="font-weight-bold mb-1">Kanthe Leather</h5>
+                            <p class="mb-2 text-muted small">E-Commerce Web App</p>
+                            <div class="mb-3">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">UI/UX</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="https://www.figma.com/design/8wnqa1C22WzUlZtD7b9fw3/Kanthe-Ecommerce?node-id=0-1&t=Gf2q2cen0FTGjoWH-1"
+                                    target="_blank" class="btn btn-sm btn-primary-custom mr-2">Figma</a>
+                                <button type="button" class="btn btn-sm btn-outline-custom" data-toggle="modal"
+                                    data-target="#figmaModal1">Preview</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-2.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+
+                <!-- Design 2 -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item design">
+                    <div class="position-relative overflow-hidden rounded mb-2 h-100 shadow-sm">
+                        <img class="img-fluid w-100" src="img/uiux-2.jpg" alt="Essence Store">
+                        <div class="portfolio-info">
+                            <h5 class="font-weight-bold mb-1">Essence Store</h5>
+                            <p class="mb-2 text-muted small">Home Decor E-commerce</p>
+                            <div class="mb-3">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Prototyping</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="https://www.figma.com/design/HAmj97p0ZTbVVJBMBw0OKM/Essence-Store?node-id=1203-565&t=5aQcGUZDkBHdbauS-1"
+                                    target="_blank" class="btn btn-sm btn-primary-custom mr-2">Figma</a>
+                                <button type="button" class="btn btn-sm btn-outline-custom" data-toggle="modal"
+                                    data-target="#figmaModal2">Preview</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-3.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://majipulse.onrender.com/" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+
+                <!-- Design 3 -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item design">
+                    <div class="position-relative overflow-hidden rounded mb-2 h-100 shadow-sm">
+                        <img class="img-fluid w-100" src="img/uiux-3.jpg" alt="HEAL App">
+                        <div class="portfolio-info">
+                            <h5 class="font-weight-bold mb-1">HEAL App</h5>
+                            <p class="mb-2 text-muted small">Mental Health Support</p>
+                            <div class="mb-3">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Healthcare</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="https://www.figma.com/proto/5YgUKdb0ycdSwE8Coksi3x/HealV4--Copy-?node-id=2033-6111&t=0s9rp8oYZEpAprvH-0"
+                                    target="_blank" class="btn btn-sm btn-primary-custom mr-2">Figma</a>
+                                <button type="button" class="btn btn-sm btn-outline-custom" data-toggle="modal"
+                                    data-target="#figmaModal3">Preview</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-4.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+                <!-- Design 4 -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item design">
+                    <div class="position-relative overflow-hidden rounded mb-2 h-100 shadow-sm">
+                        <img class="img-fluid w-100" src="img/uiux-4.jpg" alt="Koru Mission Hospital">
+                        <div class="portfolio-info">
+                            <h5 class="font-weight-bold mb-1">Koru Mission Hospital</h5>
+                            <p class="mb-2 text-muted small">Digital Healthcare Presence</p>
+                            <div class="mb-3">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Web Design</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="https://www.figma.com/proto/pGRXl29glWx1ZHN57JHzAT/Holy-Family_Mission_Hospital_Prototype_01272025_V5?node-id=18-635"
+                                    target="_blank" class="btn btn-sm btn-primary-custom mr-2">Figma</a>
+                                <button type="button" class="btn btn-sm btn-outline-custom" data-toggle="modal"
+                                    data-target="#figmaModal4">Preview</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-5.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+                <!-- Design 5 -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item design">
+                    <div class="position-relative overflow-hidden rounded mb-2 h-100 shadow-sm">
+                        <img class="img-fluid w-100" src="img/uiux-5.jpg" alt="BitDash">
+                        <div class="portfolio-info">
+                            <h5 class="font-weight-bold mb-1">BitDash</h5>
+                            <p class="mb-2 text-muted small">Bitcoin Dashboard</p>
+                            <div class="mb-3">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Fintech</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="https://www.figma.com/proto/2Sau3ADxzMTlFQ2Uoxrr61/Alice_Okingo_BitcoinDashboard_01142025_V1?node-id=56645-3&t=E24AWHoiugLBe4Q9-0"
+                                    target="_blank" class="btn btn-sm btn-primary-custom mr-2">Figma</a>
+                                <button type="button" class="btn btn-sm btn-outline-custom" data-toggle="modal"
+                                    data-target="#figmaModal5">Preview</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-6.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+
+
+                <!-- DATA SCIENCE PROJECTS -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item data-science">
+                    <div class="position-relative overflow-hidden rounded mb-2 h-100 shadow-sm">
+                        <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="ASCII Art">
+                        <div class="portfolio-info">
+                            <h5 class="font-weight-bold mb-1">ASCII Art Justify</h5>
+                            <p class="mb-2 text-muted small">Text processing tool</p>
+                            <div class="mb-3">
+                                <span class="tech-tag">Go</span>
+                                <span class="tech-tag">Algorithms</span>
+                            </div>
+                            <a href="https://learn.zone01kisumu.ke/git/aokingo/ascii-art-justify.git" target="_blank"
+                                class="btn btn-sm btn-primary-custom">View Code</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- TECH FOR SOCIAL GOOD -->
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item social-good">
+                    <div class="position-relative overflow-hidden rounded mb-2 h-100 shadow-sm">
+                        <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="MajiPulse">
+                        <div class="portfolio-info">
+                            <h5 class="font-weight-bold mb-1">MajiPulse</h5>
+                            <p class="mb-2 text-muted small">Water access monitoring</p>
+                            <div class="mb-3">
+                                <span class="tech-tag">IoT</span>
+                                <span class="tech-tag">Data Viz</span>
+                            </div>
+                            <a href="https://majipulse.onrender.com/" target="_blank"
+                                class="btn btn-sm btn-primary-custom">View Live</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
     <!-- Portfolio End -->
+
+    <!-- Figma Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="figmaModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">Kanthe Leather Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F8wnqa1C22WzUlZtD7b9fw3%2FKanthe-Ecommerce%3Fnode-id%3D0-1%26t%3DGf2q2cen0FTGjoWH-1"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2 -->
+    <div class="modal fade" id="figmaModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">Essence Store Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FHAmj97p0ZTbVVJBMBw0OKM%2FEssence-Store%3Fnode-id%3D1203-565%26t%3D5aQcGUZDkBHdbauS-1"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 3 -->
+    <div class="modal fade" id="figmaModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">HEAL App Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5YgUKdb0ycdSwE8Coksi3x%2FHealV4--Copy-%3Fnode-id%3D2033-6111%26t%3D0s9rp8oYZEpAprvH-0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 4 -->
+    <div class="modal fade" id="figmaModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">Koru Mission Hospital Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FpGRXl29glWx1ZHN57JHzAT%2FHoly-Family_Mission_Hospital_Prototype_01272025_V5%3Fnode-id%3D18-635"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 5 -->
+    <div class="modal fade" id="figmaModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">BitDash Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F2Sau3ADxzMTlFQ2Uoxrr61%2FAlice_Okingo_BitcoinDashboard_01142025_V1%3Fnode-id%3D56645-3%26t%3DE24AWHoiugLBe4Q9-0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Testimonial Start -->
@@ -634,53 +583,69 @@
                             <span>Pamoja Trust</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Testimonial End -->
-
-
     <!-- Blog Start -->
-    <div class="container-fluid pt-5" id="blog">
+    <div class="container-fluid py-5 section-padding" id="blog">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Blog</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Latest Blog</h1>
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-gradient font-weight-bold">Blog</h6>
+                <h1 class="display-4">Latest Insights</h1>
             </div>
             <div class="row">
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-1.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">04</h4>
-                            <small class="text-white text-uppercase">July</small>
+                <!-- Blog 1 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-item fade-in h-100 pb-4">
+                        <div class="position-relative mb-4 overflow-hidden">
+                            <img class="img-fluid w-100" src="img/blog-1.jpg" alt="">
+                            <div class="blog-date">
+                                <h4 class="font-weight-bold mb-n1">04</h4>
+                                <small class="text-white text-uppercase">July</small>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <h5 class="font-weight-bold mb-3">Learning how to code was hard until I mastered these 8
+                                habits</h5>
+                            <a class="btn btn-sm btn-outline-custom py-2 px-4"
+                                href="https://www.linkedin.com/pulse/learning-how-code-hard-until-i-mastered-8-habits-anne-okingo-on54f/"
+                                target="_blank">Read More</a>
                         </div>
                     </div>
-                    <h5 class="font-weight-medium mb-4">Learning how to code was hard until I mastered these 8 habits</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="https://www.linkedin.com/pulse/learning-how-code-hard-until-i-mastered-8-habits-anne-okingo-on54f/?trackingId=5F0Hzb%2BkTpeCvf7CU9uhzQ%3D%3D">Read More</a>
                 </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-2.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">28</h4>
-                            <small class="text-white text-uppercase">Aug</small>
+                <!-- Blog 2 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-item fade-in h-100 pb-4">
+                        <div class="position-relative mb-4 overflow-hidden">
+                            <img class="img-fluid w-100" src="img/blog-2.jpg" alt="">
+                            <div class="blog-date">
+                                <h4 class="font-weight-bold mb-n1">28</h4>
+                                <small class="text-white text-uppercase">Aug</small>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <h5 class="font-weight-bold mb-3">Understanding APIs: A Comprehensive Guide to API Concepts
+                            </h5>
+                            <a class="btn btn-sm btn-outline-custom py-2 px-4"
+                                href="https://docs.google.com/document/d/1p0uMpAtABAabhJZi1FkVXQSRnyemLMes/edit?usp=sharing"
+                                target="_blank">Read More</a>
                         </div>
                     </div>
-                    <h5 class="font-weight-medium mb-4">Understanding APIs: A Comprehensive Guide to API Concepts and Using APIs in Go</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="https://docs.google.com/document/d/1p0uMpAtABAabhJZi1FkVXQSRnyemLMes/edit?usp=sharing&ouid=112706888887884946655&rtpof=true&sd=true">Read More</a>
                 </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-3.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">26</h4>
-                            <small class="text-white text-uppercase">Sep</small>
+                <!-- Blog 3 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-item fade-in h-100 pb-4">
+                        <div class="position-relative mb-4 overflow-hidden">
+                            <img class="img-fluid w-100" src="img/blog-3.jpg" alt="">
+                            <div class="blog-date">
+                                <h4 class="font-weight-bold mb-n1">26</h4>
+                                <small class="text-white text-uppercase">Sep</small>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <h5 class="font-weight-bold mb-3">The Ultimate Guide to Docker: Simplifying Containers</h5>
+                            <a class="btn btn-sm btn-outline-custom py-2 px-4"
+                                href="https://docs.google.com/document/d/1MzYBa0sZraOLS5RiIugw3hnGFP_y-VBYVVNSTZGkOBc/edit?usp=sharing"
+                                target="_blank">Read More</a>
                         </div>
                     </div>
-                    <h5 class="font-weight-medium mb-4">The Ultimate Guide to Docker: Simplifying Containers and Application Deployment</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2" href="https://docs.google.com/document/d/1MzYBa0sZraOLS5RiIugw3hnGFP_y-VBYVVNSTZGkOBc/edit?usp=sharing">Read More</a>
                 </div>
             </div>
         </div>
@@ -689,46 +654,51 @@
 
 
     <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
+    <div class="container-fluid py-5 section-padding" id="contact">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-gradient font-weight-bold">Contact</h6>
+                <h1 class="display-4">Get In Touch</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-form text-center">
                         <div id="success"></div>
-                      <!-- Contact Form -->
-<form name="sentMessage" id="contactForm" action="/contact" method="POST" novalidate="novalidate">
-    <div class="form-row">
-        <div class="control-group col-sm-6">
-            <input type="text" class="form-control p-4" id="name" name="name" placeholder="Your Name"
-                required="required" data-validation-required-message="Please enter your name" />
-            <p class="help-block text-danger"></p>
-        </div>
-        <div class="control-group col-sm-6">
-            <input type="email" class="form-control p-4" id="email" name="email" placeholder="Your Email"
-                required="required" data-validation-required-message="Please enter your email" />
-            <p class="help-block text-danger"></p>
-        </div>
-    </div>
-    <div class="control-group">
-        <input type="text" class="form-control p-4" id="subject" name="subject" placeholder="Subject"
-            required="required" data-validation-required-message="Please enter a subject" />
-        <p class="help-block text-danger"></p>
-    </div>
-    <div class="control-group">
-        <textarea class="form-control py-3 px-4" rows="5" id="message" name="message" placeholder="Message"
-            required="required"
-            data-validation-required-message="Please enter your message"></textarea>
-        <p class="help-block text-danger"></p>
-    </div>
-    <div>
-        <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send Message</button>
-    </div>
-</form>
-<!-- contact form ends -->
+                        <!-- Contact Form -->
+                        <form name="sentMessage" id="contactForm" action="/contact" method="POST"
+                            novalidate="novalidate">
+                            <div class="form-row">
+                                <div class="control-group col-sm-6 mb-3">
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="Your Name" required="required"
+                                        data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group col-sm-6 mb-3">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Your Email" required="required"
+                                        data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group mb-3">
+                                <input type="text" class="form-control" id="subject" name="subject"
+                                    placeholder="Subject" required="required"
+                                    data-validation-required-message="Please enter a subject" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group mb-3">
+                                <textarea class="form-control" rows="5" id="message" name="message"
+                                    placeholder="Message" required="required"
+                                    data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary-custom py-3 px-5" type="submit"
+                                    id="sendMessageButton">Send
+                                    Message</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -738,24 +708,26 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="container-fluid footer mt-5 py-5 px-sm-3 px-md-5">
         <div class="container text-center py-5">
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-light btn-social" href="https://github.com/Anne-Okingo"><i class="fab fa-github"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/anne-okingo-8ab242126/"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://x.com/anne_kadiso"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://www.facebook.com/ekmar.kadiso.94"><i class="fab fa-facebook-f"></i></a>
+            <div class="d-flex justify-content-center mb-4 social-links">
+                <a class="btn btn-social" href="https://github.com/Anne-Okingo"><i class="fab fa-github"></i></a>
+                <a class="btn btn-social mr-2" href="https://www.linkedin.com/in/anne-okingo-8ab242126/"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-social mr-2" href="https://x.com/anne_kadiso"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-social mr-2" href="https://www.facebook.com/ekmar.kadiso.94"><i
+                        class="fab fa-facebook-f"></i></a>
             </div>
             <div class="d-flex justify-content-center mb-3">
-                <a class="text-white" href="#">Privacy</a>
+                <a href="#">Privacy</a>
                 <span class="px-3">|</span>
-                <a class="text-white" href="#">Terms</a>
+                <a href="#">Terms</a>
                 <span class="px-3">|</span>
-                <a class="text-white" href="#">FAQs</a>
+                <a href="#">FAQs</a>
                 <span class="px-3">|</span>
-                <a class="text-white" href="#">Help</a>
+                <a href="#">Help</a>
             </div>
-            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">Alice Okingo</a>. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">Alice Okingo</a>
+            <p class="m-0">&copy; <a class="font-weight-bold" href="#">Alice Okingo</a>. All Rights Reserved.
             </p>
         </div>
     </div>
@@ -771,9 +743,9 @@
     <!-- JavaScript Libraries -->
     <!-- Scrolling -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<!-- typewriting -->
+    <!-- typewriting -->
     <script src="lib/typed/typed.min.js"></script>
-<!-- navbar scrolling -->
+    <!-- navbar scrolling -->
     <script src="lib/easing/easing.min.js"></script>
 
     <!-- i have no idea -->
@@ -786,32 +758,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    
-    <!-- Dark/Light Mode Toggle Script -->
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const icon = document.getElementById('theme-icon');
-            
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-                icon.className = 'fas fa-moon';
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                icon.className = 'fas fa-sun';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-        
-        // Load saved theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.setAttribute('data-theme', 'dark');
-            document.getElementById('theme-icon').className = 'fas fa-sun';
-        }
-    </script>
-    
+    <script src="js/custom.js"></script>
+
 
 </body>
 

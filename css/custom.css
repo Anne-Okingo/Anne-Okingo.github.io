@@ -537,3 +537,60 @@ a:hover {
     height: auto;
     border-radius: 10px;
 }
+
+/* Make category headers clearly clickable */
+.category-header {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.category-header:hover {
+    background-color: rgba(45, 212, 191, 0.1) !important;
+}
+
+.category-header td {
+    padding: 15px !important;
+}
+
+.transition-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Smooth expand/collapse animation */
+.skill-row {
+    transition: all 0.3s ease;
+}
+
+/* Fix for frameworks and tools visibility */
+.skill-row.frameworks-row,
+.skill-row.tools-row {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.skill-row td {
+    color: var(--text-primary) !important;
+    opacity: 1 !important;
+}
+
+/* Remove any conflicting fade classes */
+.fade-in-hidden {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Ensure progress bars are visible */
+.progress {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: 1 !important;
+}
+
+.progress-bar {
+    opacity: 1 !important;
+}
+
+/* Make sure icons are visible */
+.skill-row i {
+    opacity: 1 !important;
+}

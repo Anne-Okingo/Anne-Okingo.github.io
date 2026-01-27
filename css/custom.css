@@ -531,3 +531,9 @@ a:hover {
     border-radius: 8px;
     text-align: center;
 }
+#particleCanvas {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}

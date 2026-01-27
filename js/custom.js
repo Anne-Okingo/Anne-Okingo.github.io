@@ -80,4 +80,43 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+    // Skills Accordion Logic
+    const categoryHeaders = document.querySelectorAll('.category-header');
+
+    // Initially hide all except the first one (or whatever logic user prefers, here we default expand Languages in HTML so we just handle toggles)
+    const allRows = document.querySelectorAll('.skill-row');
+    allRows.forEach(row => {
+        if (!row.classList.contains('languages-row')) {
+            row.style.display = 'none';
+        }
+    });
+
+    categoryHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const targetClass = header.getAttribute('data-target');
+            const targetRows = document.querySelectorAll('.' + targetClass);
+            const isExpanded = header.classList.contains('expanded');
+            const icon = header.querySelector('.transition-icon');
+
+            // Toggle current
+            if (isExpanded) {
+                targetRows.forEach(row => {
+                    row.style.display = 'none';
+                    row.classList.remove('fade-in'); // Reset animation
+                });
+                header.classList.remove('expanded');
+                if (icon) icon.className = "fas fa-chevron-right transition-icon";
+            } else {
+                targetRows.forEach(row => {
+                    row.style.display = 'table-row';
+                    // Small timeout to allow display:block to apply before opacity transition if we had one, 
+                    // but for table rows simple display toggle is often safer. 
+                    // We can add a class for animation.
+                    setTimeout(() => row.classList.add('fade-in'), 10);
+                });
+                header.classList.add('expanded');
+                if (icon) icon.className = "fas fa-chevron-down transition-icon";
+            }
+        });
+    });
 });

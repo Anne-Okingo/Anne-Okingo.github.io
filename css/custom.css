@@ -196,39 +196,114 @@ a:hover {
 }
 
 /* Experience Cards */
+/* Experience Cards */
 .experience-card {
     background: var(--bg-color);
     border: 1px solid var(--border-color);
     border-radius: 15px;
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    /* Margin controlled by col class */
     position: relative;
-    border-left: 4px solid var(--accent-color);
+    border-top: 4px solid var(--accent-color);
+    /* Changed from left to top for grid card look */
+    border-left: 1px solid var(--border-color);
+    /* Reset left border */
     box-shadow: var(--card-shadow);
-    transition: transform var(--transition-fast);
+    transition: all var(--transition-medium);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .experience-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
 }
 
 .timeline-dot {
-    position: absolute;
-    left: -40px;
-    top: 5px;
+    position: static;
+    margin-bottom: 1rem;
+    font-size: 24px;
     color: var(--accent-color);
-    background: var(--surface-color);
-    border-radius: 50%;
-    z-index: 1;
+    background: transparent;
+    width: auto;
+    height: auto;
+    display: block;
 }
 
 /* Skills Section */
-.skill-card {
-    background: var(--surface-color);
-    padding: 2rem;
-    border-radius: 20px;
+.skill-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
     box-shadow: var(--card-shadow);
-    margin-bottom: 2rem;
+}
+
+.skill-table th {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+.skill-table td {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    color: var(--text-primary);
+    transition: background-color 0.2s ease;
+}
+
+.skill-table tr:hover td {
+    background-color: var(--bg-color);
+}
+
+.category-cell {
+    background-color: rgba(13, 148, 136, 0.05) !important;
+    color: var(--accent-color) !important;
+    border-right: 1px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.category-header {
+    cursor: pointer;
+}
+
+.category-header:hover td {
+    background-color: rgba(13, 148, 136, 0.1) !important;
+}
+
+.category-header .transition-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Rotate icon when expanded */
+.category-header.expanded .transition-icon {
+    transform: rotate(180deg);
+}
+
+.category-header i {
+    width: 20px;
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* Animation for rows */
+.skill-row {
+    transition: all 0.3s ease;
 }
 
 .progress {

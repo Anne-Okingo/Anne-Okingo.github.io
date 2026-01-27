@@ -106,13 +106,46 @@
     <!-- About Start -->
     <div class="container-fluid py-5 section-padding" id="about">
         <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center"
+                style="height: 200px; overflow: hidden;">
+                <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">ABOUT</h1>
+
+                <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">My Bio</h1>
+            </div>
+
+            <style>
+                @keyframes shimmer {
+
+                    0%,
+                    100% {
+                        filter: hue-rotate(0deg);
+                    }
+
+                    50% {
+                        filter: hue-rotate(45deg);
+                    }
+                }
+            </style>
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
                     <img class="img-fluid rounded w-100 shadow-lg profile-image" src="img/about.jpg" alt="">
                 </div>
                 <div class="col-lg-7">
-                    <h6 class="text-uppercase text-gradient font-weight-bold mb-3">My Bio</h6>
-                    <h1 class="mb-4">Alice Anne Awuor Okingo</h1>
                     <p>Alice Anne Awuor Okingo is a Kenyan software developer and data scientist with three years of
                         experience applying technology, data science, and machine learning to solve complex problems and
                         drive social impact. She specializes in building data-driven, scalable solutions that amplify
@@ -144,151 +177,222 @@
     <!-- Qualification Start -->
     <div class="container-fluid py-5 section-padding bg-surface" id="qualification">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
+           <div class="position-relative d-flex align-items-center justify-content-center" style="height: 200px; overflow: hidden;">
+    <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">QUALITY</h1>
+    
+    <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Education & Experiences</h1>
+</div>
+
+<style>
+@keyframes shimmer {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(45deg); }
+}
+</style>
+            <br>
+            <!-- Education Section -->
+            <div class="row mb-5">
+                <div class="col-12">
                     <h3 class="mb-4 text-gradient">Education & Certification</h3>
-                    <div class="pl-4 border-left" style="border-color: var(--border-color) !important;">
-                        <!-- Core Focus Areas -->
-                        <div class="experience-card">
-                            <i class="fas fa-bullseye timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Software Development · Data Science · ML</h5>
-                            <p class="mb-2 text-primary"><strong>Zone 01 Kisumu</strong> | <small>Feb 2024 - Present</small></p>
-                            <p>Designing data-driven, ML-enabled applications for real-world impact, with a strong focus
-                                on health, gender equity, and social innovation.</p>
-                        </div>
-                        <!-- New Entry 1 -->
-                        <div class="experience-card">
-                            <i class="fas fa-venus-mars timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Gender Transformative Programming</h5>
-                            <p class="mb-2 text-primary"><strong>APHRC</strong> | <small>Oct 2025</small></p>
-                            <p class="mb-2">Practical training in gender analysis, GBV prevention, and gender-responsive
-                                program design, with a strong focus on M&E and survivor-centered community approaches.
-                            </p>
-                            <div>
-                                <span class="tech-tag">Gender Equality</span>
-                                <span class="tech-tag">M&E</span>
-                                <span class="tech-tag">GBV Prevention</span>
-                                <span class="tech-tag">Community Programs</span>
-                            </div>
-                        </div>
-                        <!-- New Entry 2 -->
-                        <div class="experience-card">
-                            <i class="fas fa-server timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Kubernetes & Cloud Native Essentials (LFS250)</h5>
-                            <p class="mb-2 text-primary"><strong>Linux Foundation</strong> | <small>May 2025</small></p>
-                            <p class="mb-2">Hands-on foundations in Kubernetes, containers, microservices, and CI/CD,
-                                enabling the design of scalable and resilient cloud-native systems.</p>
-                            <div>
-                                <span class="tech-tag">Kubernetes</span>
-                                <span class="tech-tag">Cloud Native</span>
-                                <span class="tech-tag">CI/CD</span>
-                                <span class="tech-tag">Microservices</span>
-                            </div>
-                        </div>
-                        <!-- New Entry 3 -->
-                        <div class="experience-card">
-                            <i class="fas fa-network-wired timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Designing & Deploying Computer Networks</h5>
-                            <p class="mb-2 text-primary"><strong>Internet Society</strong> | <small>Mar 2025</small></p>
-                            <p class="mb-2">Built core skills in network architecture, routing, and security, supporting
-                                reliable, secure, and scalable software systems.</p>
-                            <div>
-                                <span class="tech-tag">Networking</span>
-                                <span class="tech-tag">Security</span>
-                                <span class="tech-tag">Infrastructure</span>
-                                <span class="tech-tag">System Design</span>
-                            </div>
-                        </div>
-                        <!-- Existing Entry -->
-                        <div class="experience-card">
-                            <i class="fas fa-certificate timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Project Planning M&E</h5>
-                            <p class="mb-2 text-primary"><strong>Corat Africa</strong> | <small>2022 - 2023</small></p>
-                            <p>Advanced project monitoring and impact analysis.</p>
-                        </div>
-                        <!-- Existing Entry -->
-                        <div class="experience-card">
-                            <i class="fas fa-graduation-cap timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Bachelor Degree Commerce</h5>
-                            <p class="mb-2 text-primary"><strong>Kirinyaga University</strong> | <small>2013 -
-                                    2017</small></p>
-                            <p>Specialized in marketing and business operations.</p>
+                </div>
+                <!-- Core Focus Areas -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-bullseye timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Software Development · Data Science · ML</h5>
+                        <p class="mb-2 text-primary"><strong>Zone 01 Kisumu</strong> | <small>Feb 2024 - Present</small>
+                        </p>
+                        <p>Designing data-driven, ML-enabled applications for real-world impact, with a strong focus on
+                            health, gender equity, and social innovation.</p>
+                        <div>
+                            <span class="tech-tag">Software Development</span>
+                            <span class="tech-tag">Data Science</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Go</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4 text-gradient">Experience</h3>
-                    <div class="pl-4 border-left" style="border-color: var(--border-color) !important;">
+                <!-- New Entry 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-venus-mars timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Gender Transformative Programming</h5>
+                        <p class="mb-2 text-primary"><strong>APHRC</strong> | <small>Oct 2025</small></p>
+                        <p class="mb-2">Practical training in gender analysis, GBV prevention, and gender-responsive
+                            program design, with a strong focus on M&E and survivor-centered community approaches.</p>
+                        <div>
+                            <span class="tech-tag">Gender Equality</span>
+                            <span class="tech-tag">M&E</span>
+                            <span class="tech-tag">GBV Prevention</span>
+                            <span class="tech-tag">Community Programs</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Entry 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-server timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Kubernetes & Cloud Native Essentials (LFS250)</h5>
+                        <p class="mb-2 text-primary"><strong>Linux Foundation</strong> | <small>May 2025</small></p>
+                        <p class="mb-2">Hands-on foundations in Kubernetes, containers, microservices, and CI/CD,
+                            enabling the design of scalable and resilient cloud-native systems.</p>
+                        <div>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Cloud Native</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Entry 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-network-wired timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Designing & Deploying Computer Networks</h5>
+                        <p class="mb-2 text-primary"><strong>Internet Society</strong> | <small>Mar 2025</small></p>
+                        <p class="mb-2">Built core skills in network architecture, routing, and security, supporting
+                            reliable, secure, and scalable software systems.</p>
+                        <div>
+                            <span class="tech-tag">Networking</span>
+                            <span class="tech-tag">Security</span>
+                            <span class="tech-tag">Infrastructure</span>
+                            <span class="tech-tag">System Design</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Existing Entry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-certificate timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Project Planning M&E</h5>
+                        <p class="mb-2 text-primary"><strong>Corat Africa</strong> | <small>2022 - 2023</small></p>
+                        <p>Advanced project monitoring and impact analysis.</p>
+                        <div>
+                            <span class="tech-tag">Project Planning</span>
+                            <span class="tech-tag">Monitoring & Evaluation</span>
+                            <span class="tech-tag">Impact Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Existing Entry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-graduation-cap timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Bachelor Degree Commerce</h5>
+                        <p class="mb-2 text-primary"><strong>Kirinyaga University</strong> | <small>2013 - 2017</small>
+                        </p>
+                        <p>Specialized in marketing and business operations.</p>
+                        <div>
+                            <span class="tech-tag">Marketing</span>
+                            <span class="tech-tag">Business Operations</span>
+                            <span class="tech-tag">Commerce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        <!-- Experience 1 -->
-                        <div class="experience-card">
-                            <i class="fas fa-laptop-code timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Software Developer</h5>
-                            <p class="mb-2 text-primary"><strong>Zone 01 Kisumu</strong> | <small>2024 – Present</small>
-                            </p>
-                            <p class="mb-2">Develop and maintain scalable software solutions, applying data analysis and
-                                machine learning to support evidence-based decision-making for social impact projects.
-                            </p>
-                            <div>
-                                <span class="tech-tag">Software Engineering</span>
-                                <span class="tech-tag">Data Science</span>
-                                <span class="tech-tag">ML</span>
-                                <span class="tech-tag">Agile</span>
-                            </div>
+            <!-- Experience Section -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="mb-4 text-gradient">Experience</h3>
+                </div>
+                <!-- Experince 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-laptop-code timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Software Developer</h5>
+                        <p class="mb-2 text-primary"><strong>Zone 01 Kisumu</strong> | <small>2024 – Present</small></p>
+                        <p class="mb-2">Develop and maintain scalable software solutions, applying data analysis and
+                            machine learning to support evidence-based decision-making for social impact projects.</p>
+                        <div>
+                            <span class="tech-tag">Software Engineering</span>
+                            <span class="tech-tag">Data Science</span>
+                            <span class="tech-tag">ML</span>
+                            <span class="tech-tag">Agile</span>
                         </div>
-                        <!-- Experience 2 -->
-                        <div class="experience-card">
-                            <i class="fas fa-rocket timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Founder & Program Lead</h5>
-                            <p class="mb-2 text-primary"><strong>Heal-Impact</strong> | <small>2024 – Present</small>
-                            </p>
-                            <p class="mb-2">Founded a digital mental health platform for GBV survivors, using
-                                data-driven insights to inform prevention strategies and build partnerships with CSOs,
-                                health facilities, and tech teams.</p>
-                            <div>
-                                <span class="tech-tag">Social Innovation</span>
-                                <span class="tech-tag">Data</span>
-                                <span class="tech-tag">GBV Prevention</span>
-                                <span class="tech-tag">Partnerships</span>
-                            </div>
+                    </div>
+                </div>
+                <!-- Experience 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-rocket timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Founder & Program Lead</h5>
+                        <p class="mb-2 text-primary"><strong>Heal-Impact</strong> | <small>2024 – Present</small></p>
+                        <p class="mb-2">Founded a digital mental health platform for GBV survivors, using data-driven
+                            insights to inform prevention strategies and build partnerships with CSOs, health
+                            facilities, and tech teams.</p>
+                        <div>
+                            <span class="tech-tag">Social Innovation</span>
+                            <span class="tech-tag">Data</span>
+                            <span class="tech-tag">GBV Prevention</span>
+                            <span class="tech-tag">Partnerships</span>
                         </div>
-                        <!-- Experience 3 -->
-                        <div class="experience-card">
-                            <i class="fas fa-users timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Project Manager</h5>
-                            <p class="mb-2 text-primary"><strong>Institute for Faith & Gender Empowerment
-                                    (IFGE)</strong> | <small>2019 – 2024</small></p>
-                            <p class="mb-2">Led gender equity and civic participation programs, managing data
-                                collection, analysis, reporting, and multi-stakeholder coordination for sustainable
-                                community impact.</p>
-                            <div>
-                                <span class="tech-tag">Program Management</span>
-                                <span class="tech-tag">Gender Equality</span>
-                                <span class="tech-tag">M&E</span>
-                                <span class="tech-tag">Stakeholder Engagement</span>
-                            </div>
+                    </div>
+                </div>
+                <!-- Experience 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-users timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Project Manager</h5>
+                        <p class="mb-2 text-primary"><strong>Institute for Faith & Gender Empowerment (IFGE)</strong> |
+                            <small>2019 – 2024</small>
+                        </p>
+                        <p class="mb-2">Led gender equity and civic participation programs, managing data collection,
+                            analysis, reporting, and multi-stakeholder coordination for sustainable community impact.
+                        </p>
+                        <div>
+                            <span class="tech-tag">Program Management</span>
+                            <span class="tech-tag">Gender Equality</span>
+                            <span class="tech-tag">M&E</span>
+                            <span class="tech-tag">Stakeholder Engagement</span>
                         </div>
-                        <!-- Experience 4 -->
-                        <div class="experience-card">
-                            <i class="fas fa-chalkboard-teacher timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">Project Manager & Mentor</h5>
-                            <p class="mb-2 text-primary"><strong>Code Ssipers</strong> | <small>2019 – Present</small>
-                            </p>
-                            <p class="mb-2">Mentored young developers and led technical projects, including Afyakuu, an
-                                AI-driven cancer prediction tool for resource-limited settings.</p>
-                            <div>
-                                <span class="tech-tag">AI</span>
-                                <span class="tech-tag">Machine Learning</span>
-                                <span class="tech-tag">Mentorship</span>
-                                <span class="tech-tag">Health Tech</span>
-                            </div>
+                    </div>
+                </div>
+                <!-- Experience 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-chalkboard-teacher timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Project Manager & Mentor</h5>
+                        <p class="mb-2 text-primary"><strong>Code Ssipers</strong> | <small>2019 – Present</small></p>
+                        <p class="mb-2">Mentored young developers and led technical projects, including Afyakuu, an
+                            AI-driven cancer prediction tool for resource-limited settings.</p>
+                        <div>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Mentorship</span>
+                            <span class="tech-tag">Health Tech</span>
                         </div>
-                        <!-- Experience 5 -->
-                        <div class="experience-card">
-                            <i class="fas fa-palette timeline-dot"></i>
-                            <h5 class="font-weight-bold mb-1">UI/UX Design for Impact</h5>
-                            <p class="mb-2">Designing accessible, inclusive, and data-informed user experiences, with a
-                                strong focus on low-bandwidth, mobile-first, and community-centered contexts.</p>
+                    </div>
+                </div>
+                <!-- Experience 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-palette timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">UI/UX Design for Impact</h5>
+                        <p class="mb-2">Designing accessible, inclusive, and data-informed user experiences, with a
+                            strong focus on low-bandwidth, mobile-first, and community-centered contexts.</p>
+                        <div>
+                            <span class="tech-tag">UI/UX</span>
+                            <span class="tech-tag">User Research</span>
+                            <span class="tech-tag">Prototyping</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Low-bandwidth Design</span>
                         </div>
                     </div>
                 </div>
@@ -300,45 +404,361 @@
     <!-- Skill Start -->
     <div class="container-fluid py-5 section-padding" id="skill">
         <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-uppercase text-gradient font-weight-bold">Skills</h6>
-                <h1 class="display-4">Technical Proficiency</h1>
-            </div>
+            <div class="position-relative d-flex align-items-center justify-content-center" style="height: 200px; overflow: hidden;">
+    <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">SKILLS</h1>
+    
+    <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Technical Proficiency</h1>
+</div>
+
+<style>
+@keyframes shimmer {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(45deg); }
+}
+</style>
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="skill-card fade-in">
-                        <div class="d-flex justify-content-between mb-2">
-                            <h6 class="font-weight-bold">HTML & CSS</h6>
-                            <h6 class="font-weight-bold">95%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0"
-                                aria-valuemax="100" style="width: 95%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="skill-card fade-in">
-                        <div class="d-flex justify-content-between mb-2">
-                            <h6 class="font-weight-bold">Golang</h6>
-                            <h6 class="font-weight-bold">75%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                aria-valuemax="100" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="skill-card fade-in">
-                        <div class="d-flex justify-content-between mb-2">
-                            <h6 class="font-weight-bold">JavaScript</h6>
-                            <h6 class="font-weight-bold">70%</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                aria-valuemax="100" style="width: 70%"></div>
-                        </div>
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover skill-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40%;">Technology</th>
+                                    <th style="width: 60%;">Proficiency (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Languages Header -->
+                                <tr class="category-header expanded" data-target="languages-row" role="button">
+                                    <td colspan="2" class="align-middle font-weight-bold category-cell pointer">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span><i class="fas fa-code mr-2"></i> Languages</span>
+                                            <i class="fas fa-chevron-down transition-icon"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Language Items -->
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-golang text-primary mr-2"></i> Go</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">85%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar dropdown-toggle-split" role="progressbar"
+                                                    style="width: 85%; background-color: var(--accent-color);"
+                                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-js text-warning mr-2"></i> JavaScript</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">80%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 80%; background-color: var(--accent-color);"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-rust text-white mr-2"
+                                            style="background: black; border-radius: 50%; padding: 2px;"></i> Rust</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">65%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 65%; background-color: var(--accent-color);"
+                                                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-python text-info mr-2"></i> Python</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">80%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 80%; background-color: var(--accent-color);"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-html5 text-danger mr-2"></i> HTML5</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">90%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 90%; background-color: var(--accent-color);"
+                                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-css3-alt text-primary mr-2"></i> CSS3</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">85%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 85%; background-color: var(--accent-color);"
+                                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fas fa-project-diagram mr-2"></i> GraphQL</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">65%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 65%; background-color: var(--accent-color);"
+                                                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Frameworks Header -->
+                                <tr class="category-header" data-target="frameworks-row" role="button">
+                                    <td colspan="2" class="align-middle font-weight-bold category-cell pointer">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span><i class="fas fa-layer-group mr-2"></i> Frameworks</span>
+                                            <i class="fas fa-chevron-right transition-icon"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Framework Items -->
+                                <tr class="skill-row frameworks-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-code mr-2"></i> Django</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row frameworks-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-react text-info mr-2"></i> React Native
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row frameworks-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-css3 text-info mr-2"></i> Tailwind CSS
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">85%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 85%; background-color: var(--accent-color);"
+                                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row frameworks-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-node-js text-success mr-2"></i> Node.js
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">70%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 70%; background-color: var(--accent-color);"
+                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Tools Header -->
+                                <tr class="category-header" data-target="tools-row" role="button">
+                                    <td colspan="2" class="align-middle font-weight-bold category-cell pointer">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span><i class="fas fa-toolbox mr-2"></i> Tools</span>
+                                            <i class="fas fa-chevron-right transition-icon"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Tool Items -->
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-docker text-primary mr-2"></i> Docker</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">70%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 70%; background-color: var(--accent-color);"
+                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-dharmachakra text-primary mr-2"></i>
+                                        Kubernetes</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">60%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 60%; background-color: var(--accent-color);"
+                                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-git-alt text-danger mr-2"></i> Git</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">85%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 85%; background-color: var(--accent-color);"
+                                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-linux text-dark mr-2"></i> Linux</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">80%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 80%; background-color: var(--accent-color);"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-database text-info mr-2"></i> PostgreSQL
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-database text-warning mr-2"></i> MySQL
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-database text-secondary mr-2"></i> SQLite
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">80%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 80%; background-color: var(--accent-color);"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-server text-success mr-2"></i> Nginx</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">60%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 60%; background-color: var(--accent-color);"
+                                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-figma text-purple mr-2"
+                                            style="color: #F24E1E;"></i> Figma</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-book text-warning mr-2"></i> Jupyter
+                                        Notebook</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">70%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 70%; background-color: var(--accent-color);"
+                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -349,10 +769,40 @@
     <!-- Services Start -->
     <div class="container-fluid py-5 section-padding" id="services">
         <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-uppercase text-gradient font-weight-bold">Services</h6>
-                <h1 class="display-4">What I Offer</h1>
-            </div>
+           
+
+
+<div class="position-relative d-flex align-items-center justify-content-center" style="height: 200px; overflow: hidden;">
+    <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">SERVICES</h1>
+    
+    <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">What I Offer</h1>
+</div>
+<br>
+
+<style>
+@keyframes shimmer {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(45deg); }
+}
+</style>
+
+
+
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="service-item fade-in">
@@ -403,10 +853,40 @@
     <!-- Portfolio Start -->
     <div class="container-fluid py-5 section-padding bg-surface" id="portfolio">
         <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-uppercase text-gradient font-weight-bold">Portfolio</h6>
-                <h1 class="display-4">Recent Projects</h1>
-            </div>
+          
+
+
+<div class="position-relative d-flex align-items-center justify-content-center" style="height: 200px; overflow: hidden;">
+    <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">PORTFOLIO</h1>
+    
+    <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Recent Projects</h1>
+</div>
+<br>
+
+<style>
+@keyframes shimmer {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(45deg); }
+}
+</style>
+
+
+
             <div class="row">
                 <div class="col-12 text-center mb-4">
                     <ul class="list-inline" id="portfolio-flters">
@@ -691,10 +1171,39 @@
     <!-- Blog Start -->
     <div class="container-fluid py-5 section-padding" id="blog">
         <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-uppercase text-gradient font-weight-bold">Blog</h6>
-                <h1 class="display-4">Latest Insights</h1>
-            </div>
+           
+
+
+<div class="position-relative d-flex align-items-center justify-content-center" style="height: 200px; overflow: hidden;">
+    <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">ARTICLES</h1>
+    
+    <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Latest Insights</h1>
+</div>
+<br>
+
+<style>
+@keyframes shimmer {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(45deg); }
+}
+</style>
+
+
             <div class="row">
                 <!-- Blog 1 -->
                 <div class="col-lg-4 mb-4">
@@ -761,10 +1270,38 @@
     <!-- Contact Start -->
     <div class="container-fluid py-5 section-padding" id="contact">
         <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-uppercase text-gradient font-weight-bold">Contact</h6>
-                <h1 class="display-4">Get In Touch</h1>
-            </div>
+           
+
+
+<div class="position-relative d-flex align-items-center justify-content-center" style="height: 200px; overflow: hidden;">
+    <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">CONTACT</h1>
+    
+    <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Get In Touch</h1>
+</div>
+<br>
+<style>
+@keyframes shimmer {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(45deg); }
+}
+</style>
+
+
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-form text-center">

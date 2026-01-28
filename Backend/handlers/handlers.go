@@ -9,7 +9,7 @@ import (
 // HomeHandler handles the homepage route '/'
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodGet {
-		renders.RenderTemplate(w, "index.html", nil)
+		http.ServeFile(w, r, "index.html")
 	} else {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 	}

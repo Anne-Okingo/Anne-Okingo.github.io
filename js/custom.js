@@ -53,32 +53,63 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Portfolio Filtering
-    const filterButtons = document.querySelectorAll('#portfolio-flters li');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    // Portfolio Filtering & Carousel Logic
+    const $portfolioCarousel = $('.portfolio-carousel');
+    const $portfolioContainer = $('.portfolio-container'); // Container to hold items temporarily if needed
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
+    // Store original items to allow filtering
+    // We need to clone them because Owl Carousel modifies the DOM
+    const $allPortfolioItems = $portfolioCarousel.find('.portfolio-item').clone();
 
-            const filterValue = button.getAttribute('data-filter');
+    function initCarousel() {
+        $portfolioCarousel.trigger('destroy.owl.carousel'); // Ensure destroy before init
+        $portfolioCarousel.html(''); // Clear current content
 
-            portfolioItems.forEach(item => {
-                if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.classList.add('visible');
-                        item.classList.remove('fade-in-hidden');
-                    }, 50);
-                } else {
-                    item.style.display = 'none';
-                    item.classList.remove('visible');
-                }
-            });
+        // This function will be called to re-add items, so we need to pass items to it or handle it outside
+        // But for simpler logic, we'll handle the DOM manipulation in the filter click
+    }
+
+    function startCarousel() {
+        $portfolioCarousel.owlCarousel({
+            autoplay: true,
+            smartSpeed: 1000,
+            items: 1,
+            dots: true,
+            loop: true,
+            nav: true,
+            navText: [
+                '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+            ]
         });
+    }
+
+    // Initial Start
+    startCarousel();
+
+    // Filter Logic
+    $('#portfolio-flters li').on('click', function () {
+        $('#portfolio-flters li').removeClass('active');
+        $(this).addClass('active');
+
+        const filterValue = $(this).attr('data-filter');
+
+        // Destroy Carousel
+        $portfolioCarousel.trigger('destroy.owl.carousel');
+
+        // Build filtered items list
+        let $filteredItems;
+        if (filterValue === '*') {
+            $filteredItems = $allPortfolioItems.clone();
+        } else {
+            $filteredItems = $allPortfolioItems.filter(filterValue).clone();
+        }
+
+        // Replace content
+        $portfolioCarousel.html($filteredItems);
+
+        // Re-initialize Carousel
+        startCarousel();
     });
     // Skills Accordion Logic
     const categoryHeaders = document.querySelectorAll('.category-header');

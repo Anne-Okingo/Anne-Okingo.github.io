@@ -50,7 +50,8 @@
     width: 100%;
     height: 100%;
     background: url('../img/background.png') center/cover no-repeat fixed;
-    filter: blur(5px-20px); /* Adjust blur: 5px-20px */
+    filter: blur(5px-20px);
+    /* Adjust blur: 5px-20px */
     z-index: -2;
 }
 
@@ -63,7 +64,8 @@
     width: 100%;
     height: 100%;
     background: url('../img/background.png') center/cover no-repeat fixed;
-    backdrop-filter: blur(100px); /* Additional frosted effect */
+    backdrop-filter: blur(100px);
+    /* Additional frosted effect */
     -webkit-backdrop-filter: blur(15px);
     z-index: -1;
 }
@@ -531,6 +533,7 @@ a:hover {
     border-radius: 8px;
     text-align: center;
 }
+
 #particleCanvas {
     width: 100%;
     max-width: 500px;
@@ -593,4 +596,134 @@ a:hover {
 /* Make sure icons are visible */
 .skill-row i {
     opacity: 1 !important;
+}
+
+/* Portfolio Carousel Customization */
+.portfolio-carousel {
+    position: relative;
+    padding: 0 50px;
+    /* Space for arrows */
+}
+
+.portfolio-carousel .portfolio-item {
+    padding: 15px;
+    /* Spacing for shadow */
+}
+
+.portfolio-carousel .card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .portfolio-carousel .card {
+    background: var(--surface-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-carousel .card img {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+/* Mobile responsive adjustments for card */
+@media (max-width: 768px) {
+    .portfolio-carousel .card .row.no-gutters {
+        flex-direction: column;
+    }
+
+    .portfolio-carousel .card img {
+        border-radius: 20px 20px 0 0;
+        min-height: 200px;
+    }
+
+    .portfolio-carousel {
+        padding: 0;
+    }
+}
+
+
+/* Owl Carousel Controls */
+.portfolio-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    /* Let clicks pass through container to buttons */
+    margin-top: -20px;
+    font-size: 0;
+    /* Remove default text space */
+}
+
+.portfolio-carousel .owl-nav .owl-prev,
+.portfolio-carousel .owl-nav .owl-next {
+    pointer-events: auto;
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-color) !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(13, 148, 136, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.portfolio-carousel .owl-nav .owl-prev:hover,
+.portfolio-carousel .owl-nav .owl-next:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Position arrows outside the content slightly */
+.portfolio-carousel .owl-nav .owl-prev {
+    margin-left: -20px;
+}
+
+.portfolio-carousel .owl-nav .owl-next {
+    margin-right: -20px;
+}
+
+@media (max-width: 991px) {
+    .portfolio-carousel .owl-nav {
+        display: none;
+        /* Hide arrows on mobile/tablet, dots are enough */
+    }
+}
+
+
+/* Owl Dots */
+.portfolio-carousel .owl-dots {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.portfolio-carousel .owl-dot {
+    display: inline-block;
+}
+
+.portfolio-carousel .owl-dot span {
+    width: 12px;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    display: block;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-carousel .owl-dot.active span {
+    background: var(--accent-color);
+    transform: scale(1.2);
 }

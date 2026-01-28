@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"net/smtp"
+	"os"
 
 	"github.com/jordan-wright/email"
 )
@@ -56,8 +57,8 @@ func SendEmail(form ContactForm) error {
 	e := email.NewEmail()
 
 	// Set email details
-	e.From = "Anne Okingo <annekadiso@gmail.com>"
-	e.To = []string{"annekadiso@gmail.com"} // Replace with your email
+	e.From = fmt.Sprintf("Anne Okingo <%s>", os.Getenv("EMAIL_SENDER"))
+	e.To = []string{os.Getenv("EMAIL_SENDER")}
 	e.Subject = fmt.Sprintf("New Contact Form Submission: %s", form.Subject)
 	e.HTML = []byte(fmt.Sprintf(`
         <h1>New Message from %s</h1>
@@ -67,7 +68,7 @@ func SendEmail(form ContactForm) error {
     `, form.Name, form.Email, form.Subject, form.Message))
 
 	// SMTP authentication
-	auth := smtp.PlainAuth("", "annekadiso@gmail.com", "your-app-password-here", "smtp.gmail.com")
+	auth := smtp.PlainAuth("", os.Getenv("EMAIL_SENDER"), os.Getenv("EMAIL_PASSWORD"), "smtp.gmail.com")
 
 	// Send the email using SMTP
 	err := e.Send("smtp.gmail.com:587", auth)

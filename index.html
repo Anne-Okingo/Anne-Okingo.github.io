@@ -7,8 +7,10 @@
 
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Inter:wght@300;400;500;600;700&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Acme&family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -19,108 +21,80 @@
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/modern-effects.css" rel="stylesheet">
-    <link href="css/particles.css" rel="stylesheet">
-    <link href="css/uiux-carousel.css" rel="stylesheet">
-    <style>
-        /* Background animation */
-        @keyframes animateBackground {
-            0% {
-                background-position: 0 0;
-            }
+    <link href="css/custom.css" rel="stylesheet">
 
-            50% {
-                background-position: 50% 50%;
-            }
-
-            100% {
-                background-position: 100% 100%;
-            }
-        }
-
-        .header-section {
-            background-image: url(Background.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            min-height: 100vh;
-            animation: animateBackground 20s ease-in-out infinite;
-            transition: background-position 1s ease-in-out;
-            position: relative;
-        }
-
-        /* Optional: Add overlay */
-        .header-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgb(116, 124, 124);
-            /* Adjust opacity as needed */
-            z-index: 1;
-        }
-
-        .header-section .container {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
 </head>
 
-<body class="bg-light" data-spy="scroll" data-target=".navbar" data-offset="51">
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Theme Toggle Button -->
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-nul; navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-primary">Alice</span>Okingo</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Experience</a>
-                <a href="#skill" class="nav-item nav-link">Skill</a>
-                <a href="#service" class="nav-item nav-link">Service</a>
-                <a href="#portfolio" class="nav-item nav-link">My Work</a>
-                <a href="#blog" class="nav-item nav-link">Blog</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="#contact" class="btn btn-primary d-none d-lg-block hire-me-btn">
-                <i class="fas fa-handshake mr-2"></i>Hire Me
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 display-5"><span class="text-gradient">Alice</span>Okingo</h1>
             </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="#home" class="nav-item nav-link active">Home</a>
+                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a href="#qualification" class="nav-item nav-link">Experience</a>
+                    <a href="#skill" class="nav-item nav-link">Skill</a>
+                    <a href="#services" class="nav-item nav-link">Services</a>
+                    <a href="#portfolio" class="nav-item nav-link">Work</a>
+                    <a href="#blog" class="nav-item nav-link">Blog</a>
+                    <a href="#contact" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
         </div>
     </nav>
     <!-- Navbar End -->
 
 
-
+    <!-- Video Modal Start -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
 
     <!-- Header Start -->
-    <div class="container-fluid header-section d-flex align-items-center mb-5 py-5" id="home">
-        <div class="container">
+    <div class="container-fluid hero-section" id="home">
+        <div class="container hero-content">
             <div class="row align-items-center">
-                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/profile.jpg" alt="Profile Image">
+                <div class="col-lg-5 order-lg-2">
+                    <img src="img/profile1.jpg" alt="Alice Okingo" class="img-fluid profile-image">
                 </div>
-                <div class="col-lg-7 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>
-                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
-                        Alice Okingo</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">A Software Developer, UI/UX Designer, Web Designer, Project Officer,
-                        And A Tech for Social Good Enthusiast</div>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="Alice Anne Awuor Okingo-UI_UX CV.pdf" class="btn btn-outline-light mr-4"
-                            download="Alice Anne Awuor Okingo-UI_UX CV.pdf">
-                            <i class="fas fa-download mr-2"></i>Download CV
-                        </a>
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-envelope mr-2"></i>Get In Touch
-                        </a>
+                <div class="col-lg-7 order-lg-1 text-center text-lg-left">
+                    <h1 class="display-3 font-weight-bold mb-3">Hi, I'm <span class="text-gradient">Anne Okingo</span>
+                    </h1>
+                    <h2 class="h3 mb-4"><span class="typed-text-output text-gradient"></span></h2>
+                    <div class="typed-text d-none">Full-stack Developer, Data Scientist, Tech-For-Social-Good Enthusiast
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-3">
+                        <a href="Alice_Anne_Okingo_CV_1.pdf" class="btn btn-primary-custom mr-3" download>Download
+                            CV</a>
+                        <a href="#contact" class="btn btn-outline-custom">Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -130,60 +104,67 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
+    <div class="container-fluid py-5 section-padding" id="about">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
+            <div class="position-relative d-flex align-items-center justify-content-center"
+                style="height: 200px; overflow: hidden;">
+                <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">ABOUT</h1>
+
+                <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">My Bio</h1>
             </div>
+
+            <style>
+                @keyframes shimmer {
+
+                    0%,
+                    100% {
+                        filter: hue-rotate(0deg);
+                    }
+
+                    50% {
+                        filter: hue-rotate(45deg);
+                    }
+                }
+            </style>
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="img/about.jpg" alt="">
+                    <img class="img-fluid rounded w-100 shadow-lg profile-image" src="img/about.jpg" alt="">
                 </div>
                 <div class="col-lg-7">
-                    <h3 class="mb-4">A Software Developer...Tech For Social Good Enthusiast</h3>
-                    <p class="justified-text">
-                        Passionate apprentice software developer, UI/UX design, web designer, project officer, and
-                        tech-for-good
-                        enthusiast with a rich background in program management and community-centered impact projects
-                        management and coordination.
-                    </p>
-                    <p class="justified-text">
-                        Experienced in empowering vulnerable communities, addressing gender and social inequities, and
-                        implementing sustainable solutions.
-                    </p>
-                    <p class="justified-text">
-                        A driven professional focused on combining technology and human-centered design to tackle
-                        pressing social issues and promote inclusive and sustainable development.
-                    </p>
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2">
-                            <h6>Name: <span class="text-secondary">Alice Anne Awuor Okingo</span></h6>
-                        </div>
-                        <!-- <div class="col-sm-6 py-2">
-                            <h6>Birthday: <span class="text-secondary">23 March 1993</span></h6>
-                        </div> -->
-                        <!-- <div class="col-sm-6 py-2"><h6>Skill Level: <span class="text-secondary">Expert</span></h6></div> -->
-                        <!-- <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">10 Years</span></h6></div> -->
-                        <div class="col-sm-6 py-2">
-                            <h6>Phone: <span class="text-secondary">+254 706 529 920</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Email: <span class="text-secondary">annekadiso@gmail.com</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Address: <span class="text-secondary">3324-40100 Kisumu</span></h6>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h6>Work: <span class="text-secondary">Available</span></h6>
-                        </div>
+                    <p>Alice Anne Awuor Okingo is a Kenyan software developer and data scientist with three years of
+                        experience applying technology, data science, and machine learning to solve complex problems and
+                        drive social impact. She specializes in building data-driven, scalable solutions that amplify
+                        the voices of underrepresented women and girls, while also delivering robust software
+                        applications across sectors.</p>
+                    <p>Currently a Software Developer at Zone 01 Kisumu, Anne founded Heal-Impact in 2024, providing
+                        psychosocial support for GBV survivors and using data insights to inform gender prevention
+                        initiatives. She previously served as Project Manager at the Institute for Faith and Gender
+                        Empowerment (2019–2024), leading programs that strengthened women’s civic participation. As
+                        Project Manager for Code Ssipers, she mentors young developers and created Afyakuu, an AI-driven
+                        tool for cancer prediction in resource-limited settings.</p>
+                    <p>Her work combines software engineering, machine learning, and data analysis to create impactful,
+                        scalable solutions that advance SDGs 5, 10, 16, and 17, empowering communities, supporting
+                        evidence-based decision-making, and delivering measurable social impact.</p>
+                    <div class="row mb-4">
+                        <div class="col-sm-6 py-2"><strong>Name:</strong> Alice Anne Awuor Okingo</div>
+                        <div class="col-sm-6 py-2"><strong>Email:</strong> annekadiso@gmail.com</div>
+                        <div class="col-sm-6 py-2"><strong>Location:</strong> Kisumu, Kenya</div>
                     </div>
-                    <a href="#contact" class="btn btn-primary mr-4 hire-me-btn">
-                        <i class="fas fa-handshake mr-2"></i>Hire Me
-                    </a>
-                    <a href="#contact" class="btn btn-outline-primary">
-                        <i class="fas fa-info-circle mr-2"></i>Learn More
-                    </a>
                 </div>
             </div>
         </div>
@@ -193,113 +174,232 @@
 
 
     <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
+    <div class="container-fluid py-5 section-padding bg-surface" id="qualification">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
+            <div class="position-relative d-flex align-items-center justify-content-center"
+                style="height: 200px; overflow: hidden;">
+                <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">QUALITY</h1>
+
+                <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Education & Experiences</h1>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Bachelor Degree Commerce</h5>
-                            <p class="mb-2"><strong>Kirinyaga University</strong> | <small>2013 - 2017</small></p>
-                            <p>Developed a strong foundation in business principles, financial management, and strategic
-                                planning. Specialized in marketing, with practical coursework in business operations,
-                                management, and decision-making. This program equipped me with analytical skills and a
-                                solid understanding of the commercial landscape, preparing me for roles in business
-                                management and marketing.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Project Planning Monitoring And Evaluation</h5>
-                            <p class="mb-2"><strong>Corat Africa</strong> | <small>2022 - 2023</small></p>
-                            <p>Specialized in advanced methods for tracking and assessing project outcomes, emphasizing
-                                data-driven decision-making and real-time evaluation techniques. Enhanced expertise in
-                                project monitoring frameworks, impact analysis, and risk mitigation strategies.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">German B1 Level</h5>
-                            <p class="mb-2"><strong>Goethe Institute</strong> | <small>2017 - 2020</small></p>
-                            <p>Achieved proficiency in German at the B1 level, enabling effective communication and
-                                cultural understanding in professional and personal contexts. This training has enriched
-                                my multicultural experience and linguistic adaptability, essential in international
-                                settings.</p>
+
+            <style>
+                @keyframes shimmer {
+
+                    0%,
+                    100% {
+                        filter: hue-rotate(0deg);
+                    }
+
+                    50% {
+                        filter: hue-rotate(45deg);
+                    }
+                }
+            </style>
+            <br>
+            <!-- Education Section -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="mb-4 text-gradient">Education & Certification</h3>
+                </div>
+                <!-- Core Focus Areas -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-bullseye timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Software Development · Data Science · ML</h5>
+                        <p class="mb-2 text-primary"><strong>Zone 01 Kisumu</strong> | <small>Feb 2024 - Present</small>
+                        </p>
+                        <p>Designing data-driven, ML-enabled applications for real-world impact, with a strong focus on
+                            health, gender equity, and social innovation.</p>
+                        <div>
+                            <span class="tech-tag">Software Development</span>
+                            <span class="tech-tag">Data Science</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Go</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Web Designer</h5>
-                            <p class="mb-2"><strong>Kanthe Leather</strong> | <small>2024 </small></p>
-                            <p>Led the design and development of responsive, user-friendly website, enhancing user
-                                engagement by 30%.</p>
-                            </p>Improved the website's user experience and interface by leveraging qualitative research
-                            findings and applying user-centric design principles, demonstrating a strong foundation in
-                            understanding user behavior and needs. </p>
+                <!-- New Entry 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-venus-mars timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Gender Transformative Programming</h5>
+                        <p class="mb-2 text-primary"><strong>APHRC</strong> | <small>Oct 2025</small></p>
+                        <p class="mb-2">Practical training in gender analysis, GBV prevention, and gender-responsive
+                            program design, with a strong focus on M&E and survivor-centered community approaches.</p>
+                        <div>
+                            <span class="tech-tag">Gender Equality</span>
+                            <span class="tech-tag">M&E</span>
+                            <span class="tech-tag">GBV Prevention</span>
+                            <span class="tech-tag">Community Programs</span>
                         </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Software Engineering</h5>
-                            <p class="mb-2"><strong>Zone 01 Kisumu</strong> | <small>2024 - present</small></p>
-                            <p>I specialize in Go, python and JavaScript, mastering procedural and functional
-                                programming, and
-                                applying concurrency with Go routines. I build robust systems using effective error
-                                handling and optimized algorithms.</p>
-
-                            <p>My expertise includes dynamic programming, statistical models like linear regression, and
-                                leveraging hash maps for data parsing and tracking relationships in projects like
-                                Groupie Trackers.</p>
-
-                            <p>I have hands-on experience with command-line tools like Netcat for networking and
-                                debugging, as well as integrating REST APIs for scalable backend systems. I design
-                                modern, user-friendly interfaces using HTML, CSS, and JavaScript.</p>
-
-                            <p>Through UX research, intuitive and interactive UI and data visualization, I create
-                                user-centric solutions, automating
-                                data parsing to extract meaningful insights. I am proficient unit testing in Go,
-                                best CI/CD practices and UI/UX product designs.</p>
+                    </div>
+                </div>
+                <!-- New Entry 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-server timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Kubernetes & Cloud Native Essentials (LFS250)</h5>
+                        <p class="mb-2 text-primary"><strong>Linux Foundation</strong> | <small>May 2025</small></p>
+                        <p class="mb-2">Hands-on foundations in Kubernetes, containers, microservices, and CI/CD,
+                            enabling the design of scalable and resilient cloud-native systems.</p>
+                        <div>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Cloud Native</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">Microservices</span>
                         </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Program Officer</h5>
-                            <p class="mb-2"><strong>Institute for Faith And Gender Empowerment(IFAGE)</strong> |
-                                <small>2019 - 2013</small>
-                            </p>
-                            <p>Led gender empowerment initiatives addressing the intersection of gender inequality,
-                                climate change, and poverty.
-                            </p>Engaged diverse communities, including vulnerable women, youth, and faith leaders, to
-                            drive culturally sensitive and impactful solutions in adressing Sexual and Gender-Based
-                            Violence in sub-saharan Africa.</p>
-                            </p>Designed and implemented comprehensive monitoring and evaluation frameworks, optimizing
-                            program outcomes through data-driven insights.</p>
-                            </p>Built partnerships with NGOs, government agencies, and community leaders to expand the
-                            reach and effectiveness of organizational initiatives.</p>
+                    </div>
+                </div>
+                <!-- New Entry 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-network-wired timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Designing & Deploying Computer Networks</h5>
+                        <p class="mb-2 text-primary"><strong>Internet Society</strong> | <small>Mar 2025</small></p>
+                        <p class="mb-2">Built core skills in network architecture, routing, and security, supporting
+                            reliable, secure, and scalable software systems.</p>
+                        <div>
+                            <span class="tech-tag">Networking</span>
+                            <span class="tech-tag">Security</span>
+                            <span class="tech-tag">Infrastructure</span>
+                            <span class="tech-tag">System Design</span>
                         </div>
-                        <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
-                            <h5 class="font-weight-bold mb-1">Digital Marketing Specialist</h5>
-                            <p class="mb-2"><strong></strong>BrandOrbit<small>2016- 2018</small></p>
-                            <p>Designed and executed online marketing campaigns that boosted client engagement by 45%.
-                            </p>
-                            </p>Managed SEO strategies,content managing that led to increase in search visibility and
-                            driving traffic growth by 60%.</p>
-                            </p>Analyzed campaign performance metrics, delivering actionable insights to clients for
-                            continuous improvement.</p>
+                    </div>
+                </div>
+                <!-- Existing Entry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-certificate timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Project Planning M&E</h5>
+                        <p class="mb-2 text-primary"><strong>Corat Africa</strong> | <small>2022 - 2023</small></p>
+                        <p>Advanced project monitoring and impact analysis.</p>
+                        <div>
+                            <span class="tech-tag">Project Planning</span>
+                            <span class="tech-tag">Monitoring & Evaluation</span>
+                            <span class="tech-tag">Impact Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Existing Entry -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-graduation-cap timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Bachelor Degree Commerce</h5>
+                        <p class="mb-2 text-primary"><strong>Kirinyaga University</strong> | <small>2013 - 2017</small>
+                        </p>
+                        <p>Specialized in marketing and business operations.</p>
+                        <div>
+                            <span class="tech-tag">Marketing</span>
+                            <span class="tech-tag">Business Operations</span>
+                            <span class="tech-tag">Commerce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="mb-4 text-gradient">Experience</h3>
+                </div>
+                <!-- Experince 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-laptop-code timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Software Developer</h5>
+                        <p class="mb-2 text-primary"><strong>Zone 01 Kisumu</strong> | <small>2024 – Present</small></p>
+                        <p class="mb-2">Develop and maintain scalable software solutions, applying data analysis and
+                            machine learning to support evidence-based decision-making for social impact projects.</p>
+                        <div>
+                            <span class="tech-tag">Software Engineering</span>
+                            <span class="tech-tag">Data Science</span>
+                            <span class="tech-tag">ML</span>
+                            <span class="tech-tag">Agile</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-rocket timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Founder & Program Lead</h5>
+                        <p class="mb-2 text-primary"><strong>Heal-Impact</strong> | <small>2024 – Present</small></p>
+                        <p class="mb-2">Founded a digital mental health platform for GBV survivors, using data-driven
+                            insights to inform prevention strategies and build partnerships with CSOs, health
+                            facilities, and tech teams.</p>
+                        <div>
+                            <span class="tech-tag">Social Innovation</span>
+                            <span class="tech-tag">Data</span>
+                            <span class="tech-tag">GBV Prevention</span>
+                            <span class="tech-tag">Partnerships</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-users timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Project Manager</h5>
+                        <p class="mb-2 text-primary"><strong>Institute for Faith & Gender Empowerment (IFGE)</strong> |
+                            <small>2019 – 2024</small>
+                        </p>
+                        <p class="mb-2">Led gender equity and civic participation programs, managing data collection,
+                            analysis, reporting, and multi-stakeholder coordination for sustainable community impact.
+                        </p>
+                        <div>
+                            <span class="tech-tag">Program Management</span>
+                            <span class="tech-tag">Gender Equality</span>
+                            <span class="tech-tag">M&E</span>
+                            <span class="tech-tag">Stakeholder Engagement</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-chalkboard-teacher timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">Project Manager & Mentor</h5>
+                        <p class="mb-2 text-primary"><strong>Code Ssipers</strong> | <small>2019 – Present</small></p>
+                        <p class="mb-2">Mentored young developers and led technical projects, including Afyakuu, an
+                            AI-driven cancer prediction tool for resource-limited settings.</p>
+                        <div>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Mentorship</span>
+                            <span class="tech-tag">Health Tech</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card h-100">
+                        <i class="fas fa-palette timeline-dot"></i>
+                        <h5 class="font-weight-bold mb-1">UI/UX Design for Impact</h5>
+                        <p class="mb-2">Designing accessible, inclusive, and data-informed user experiences, with a
+                            strong focus on low-bandwidth, mobile-first, and community-centered contexts.</p>
+                        <div>
+                            <span class="tech-tag">UI/UX</span>
+                            <span class="tech-tag">User Research</span>
+                            <span class="tech-tag">Prototyping</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Low-bandwidth Design</span>
                         </div>
                     </div>
                 </div>
@@ -309,249 +409,462 @@
     <!-- Qualification End -->
 
     <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
+    <div class="container-fluid py-5 section-padding" id="skill">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
-            </div>
-            <div class="row align-items-center">
-                <!-- Programming Languages -->
-                <div class="col-md-6">
-                    <h4 class="mb-4 text-primary">Programming Languages</h4>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Go (Golang)</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">JavaScript</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Python</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Rust</h6>
-                            <small class="text-muted">Intermediate</small>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">HTML/CSS</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="position-relative d-flex align-items-center justify-content-center"
+                style="height: 200px; overflow: hidden;">
+                <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">SKILLS</h1>
 
-                <!-- Frameworks & Tools -->
-                <div class="col-md-6">
-                    <h4 class="mb-4 text-primary">Frameworks & Tools</h4>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">React.js</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Next.js</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Gin (Go)</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Django</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill mb-4">
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-bold">Git & CI/CD</h6>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                aria-valuemax="100"></div>
-                        </div>
+                <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Technical Proficiency</h1>
+            </div>
+
+            <style>
+                @keyframes shimmer {
+
+                    0%,
+                    100% {
+                        filter: hue-rotate(0deg);
+                    }
+
+                    50% {
+                        filter: hue-rotate(45deg);
+                    }
+                }
+            </style>
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover skill-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40%;">Technology</th>
+                                    <th style="width: 60%;">Proficiency (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Languages Header -->
+                                <tr class="category-header expanded" data-target="languages-row" role="button">
+                                    <td colspan="2" class="align-middle font-weight-bold category-cell pointer">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span><i class="fas fa-code mr-2"></i> Languages</span>
+                                            <i class="fas fa-chevron-down transition-icon"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Language Items -->
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-golang text-primary mr-2"></i> Go</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">85%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar dropdown-toggle-split" role="progressbar"
+                                                    style="width: 85%; background-color: var(--accent-color);"
+                                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-js text-warning mr-2"></i> JavaScript</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">80%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 80%; background-color: var(--accent-color);"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-rust text-white mr-2"
+                                            style="background: black; border-radius: 50%; padding: 2px;"></i> Rust</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">65%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 65%; background-color: var(--accent-color);"
+                                                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-python text-info mr-2"></i> Python</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">80%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 80%; background-color: var(--accent-color);"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-html5 text-danger mr-2"></i> HTML5</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">90%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 90%; background-color: var(--accent-color);"
+                                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fab fa-css3-alt text-primary mr-2"></i> CSS3</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">85%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 85%; background-color: var(--accent-color);"
+                                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row languages-row">
+                                    <td class="align-middle"><i class="fas fa-project-diagram mr-2"></i> GraphQL</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">65%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 65%; background-color: var(--accent-color);"
+                                                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Frameworks Header -->
+                                <tr class="category-header" data-target="frameworks-row" role="button">
+                                    <td colspan="2" class="align-middle font-weight-bold category-cell pointer">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span><i class="fas fa-layer-group mr-2"></i> Frameworks</span>
+                                            <i class="fas fa-chevron-right transition-icon"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Framework Items -->
+                                <tr class="skill-row frameworks-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-code mr-2"></i> Django</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row frameworks-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-react text-info mr-2"></i> React Native
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row frameworks-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-css3 text-info mr-2"></i> Tailwind CSS
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">85%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 85%; background-color: var(--accent-color);"
+                                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row frameworks-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-node-js text-success mr-2"></i> Node.js
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">70%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 70%; background-color: var(--accent-color);"
+                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Tools Header -->
+                                <tr class="category-header" data-target="tools-row" role="button">
+                                    <td colspan="2" class="align-middle font-weight-bold category-cell pointer">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span><i class="fas fa-toolbox mr-2"></i> Tools</span>
+                                            <i class="fas fa-chevron-right transition-icon"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Tool Items -->
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-docker text-primary mr-2"></i> Docker</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">70%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 70%; background-color: var(--accent-color);"
+                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-dharmachakra text-primary mr-2"></i>
+                                        Kubernetes</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">60%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 60%; background-color: var(--accent-color);"
+                                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-git-alt text-danger mr-2"></i> Git</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">85%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 85%; background-color: var(--accent-color);"
+                                                    aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-linux text-dark mr-2"></i> Linux</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">80%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 80%; background-color: var(--accent-color);"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-database text-info mr-2"></i> PostgreSQL
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-database text-warning mr-2"></i> MySQL
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-database text-secondary mr-2"></i> SQLite
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">80%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 80%; background-color: var(--accent-color);"
+                                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-server text-success mr-2"></i> Nginx</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">60%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 60%; background-color: var(--accent-color);"
+                                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fab fa-figma text-purple mr-2"
+                                            style="color: #F24E1E;"></i> Figma</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">75%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 75%; background-color: var(--accent-color);"
+                                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="skill-row tools-row fade-in-hidden" style="display: none;">
+                                    <td class="align-middle"><i class="fas fa-book text-warning mr-2"></i> Jupyter
+                                        Notebook</td>
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-3 font-weight-bold" style="width: 40px;">70%</span>
+                                            <div class="progress w-100" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar"
+                                                    style="width: 70%; background-color: var(--accent-color);"
+                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <!-- Skill End -->
 
     <!-- Services Start -->
-    <div class="container-fluid pt-5" id="service">
+    <div class="container-fluid py-5 section-padding" id="services">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center mb-5">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Services</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Services</h1>
+
+
+
+            <div class="position-relative d-flex align-items-center justify-content-center"
+                style="height: 200px; overflow: hidden;">
+                <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">SERVICES</h1>
+
+                <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">What I Offer</h1>
             </div>
+            <br>
 
-            <!-- Software Development -->
+            <style>
+                @keyframes shimmer {
+
+                    0%,
+                    100% {
+                        filter: hue-rotate(0deg);
+                    }
+
+                    50% {
+                        filter: hue-rotate(45deg);
+                    }
+                }
+            </style>
+
+
+
             <div class="row">
-
-                <!-- Web Design -->
-                <div class="col-lg-6 mb-5">
-                    <div class="service-item rounded p-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="service-icon bg-primary text-white mr-3">
-                                <i class="fa fa-2x fa-palette"></i>
-                            </div>
-                            <h4 class="font-weight-bold m-0">Web Design</h4>
+                <div class="col-lg-6 mb-4">
+                    <div class="service-item fade-in">
+                        <div class="service-icon text-white mb-4">
+                            <i class="fa fa-2x fa-palette"></i>
                         </div>
+                        <h4 class="font-weight-bold mb-3">Web Design</h4>
                         <p>Creating visually stunning and user-centric websites that align with modern design
-                            principles. I focus on delivering responsive, accessible, and brand-aligned web experiences
-                            that drive engagement and conversions.</p>
-
-                        <h5 class="font-weight-bold mb-3">What I offer:</h5>
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-check text-primary mr-2"></i>Custom responsive website designs</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>UI/UX design and prototyping</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Mobile-first approach</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Brand identity integration</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Website redesign and modernization</li>
-                        </ul>
-
-                        <h5 class="font-weight-bold mb-3">Tools & Technologies:</h5>
-                        <p>HTML5, CSS3, JavaScript, Bootstrap, Figma, Miro Canva</p>
-
-                        <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
+                            principles. Focusing on responsive, accessible, and brand-aligned experiences.</p>
                     </div>
                 </div>
-
-                <!-- Web Development -->
-                <div class="col-lg-6 mb-5">
-                    <div class="service-item rounded p-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="service-icon bg-primary text-white mr-3">
-                                <i class="fa fa-2x fa-code"></i>
-                            </div>
-                            <h4 class="font-weight-bold m-0">Web Development</h4>
+                <div class="col-lg-6 mb-4">
+                    <div class="service-item fade-in">
+                        <div class="service-icon text-white mb-4">
+                            <i class="fa fa-2x fa-code"></i>
                         </div>
+                        <h4 class="font-weight-bold mb-3">Web Development</h4>
                         <p>Full-stack web development services delivering scalable, secure, and high-performance web
-                            applications. I combine technical expertise with business understanding to create solutions
-                            that meet your specific needs.</p>
-
-                        <h5 class="font-weight-bold mb-3">What I offer:</h5>
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-check text-primary mr-2"></i>Full-stack web application development</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>E-commerce solutions</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Content Management Systems (CMS)</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Progressive Web Apps (PWAs)</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Performance optimization</li>
-                        </ul>
-
-                        <h5 class="font-weight-bold mb-3">Tools & Technologies:</h5>
-                        <!-- <p>React.js, Node.js</p> -->
-                        <p>go, javascript, HTML, CSS</p>
-                        <!-- Express.js, MongoDB, MySQL, REST APIs, GraphQL -->
-
-                        <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
+                            applications using Go, JavaScript, and modern frameworks.</p>
                     </div>
                 </div>
-
-                <!-- Project Management -->
-                <div class="col-lg-6 mb-5">
-                    <div class="service-item rounded p-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="service-icon bg-primary text-white mr-3">
-                                <i class="fa fa-2x fa-tasks"></i>
-                            </div>
-                            <h4 class="font-weight-bold m-0">Project Management</h4>
+                <div class="col-lg-6 mb-4">
+                    <div class="service-item fade-in">
+                        <div class="service-icon text-white mb-4">
+                            <i class="fa fa-2x fa-tasks"></i>
                         </div>
-                        <p>Leveraging over 5 years of program management experience to deliver successful project
-                            outcomes. Specialized in both technical and community-focused projects with proven
-                            methodologies.</p>
-
-                        <h5 class="font-weight-bold mb-3">What I offer:</h5>
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-check text-primary mr-2"></i>Project planning and execution</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Project planning, Moniroring and Evaluation
-                            </li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Stakeholder management and communication
-                            </li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Risk assessment and mitigation</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Budget management and resource allocation
-                            </li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Team leadership and coordination</li>
-                        </ul>
-
-                        <h5 class="font-weight-bold mb-3">Tools & Technologies:</h5>
-                        <p>Microsoft Project, Microsoft 365, Google Workspace</p>
-
-                        <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
+                        <h4 class="font-weight-bold mb-3">Project Management</h4>
+                        <p>Leveraging over 5 years of program management experience to deliver successful technical and
+                            community-focused projects.</p>
                     </div>
                 </div>
-
-                <!-- Digital Marketing & SEO -->
-                <div class="col-lg-6 mb-5">
-                    <div class="service-item rounded p-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="service-icon bg-primary text-white mr-3">
-                                <i class="fa fa-2x fa-search"></i>
-                            </div>
-                            <h4 class="font-weight-bold m-0">Digital Marketing & SEO</h4>
+                <div class="col-lg-6 mb-4">
+                    <div class="service-item fade-in">
+                        <div class="service-icon text-white mb-4">
+                            <i class="fa fa-2x fa-search"></i>
                         </div>
-                        <p>Comprehensive digital marketing solutions with a focus on driving organic traffic and
-                            enhancing online presence. Marketing expertise combined with technical knowledge for optimal
-                            results.</p>
-
-                        <h5 class="font-weight-bold mb-3">What I offer:</h5>
-                        <ul class="list-unstyled">
-                            <li><i class="fa fa-check text-primary mr-2"></i>Search Engine Optimization (SEO)</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Content strategy and creation</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Social media management</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Email marketing campaigns</li>
-                            <li><i class="fa fa-check text-primary mr-2"></i>Analytics and performance tracking</li>
-                        </ul>
-
-                        <h5 class="font-weight-bold mb-3">Tools & Technologies:</h5>
-                        <p>Google Analytics, MailChimp, Social Media Platforms, SEO Tools</p>
-
-                        <!-- <a class="border-bottom border-primary text-decoration-none" href="">Read More</a> -->
+                        <h4 class="font-weight-bold mb-3">Digital Marketing & SEO</h4>
+                        <p>Comprehensive digital marketing solutions focusing on organic traffic, content strategy, and
+                            data-driven performance tracking.</p>
                     </div>
                 </div>
             </div>
@@ -561,245 +874,576 @@
 
 
     <!-- Portfolio Start -->
-    <div class="container-fluid pt-5 pb-3" id="portfolio">
+    <div class="container-fluid py-5 section-padding bg-surface" id="portfolio">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Portfolio</h1>
-                <h1 class="position-absolute text-uppercase text-primary">My Work</h1>
+
+            <div class="position-relative d-flex align-items-center justify-content-center"
+                style="height: 200px; overflow: hidden;">
+                <h1 class="display-1 text-uppercase" style="
+                    -webkit-text-stroke: 2px #656769;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: 900;
+                    letter-spacing: 0.1em;
+                    opacity: 0.3;
+                    transition: all 0.3s ease;
+                ">PORTFOLIO</h1>
+
+                <h1 class="position-absolute text-uppercase" style="
+                    background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    font-weight: 700;
+                    text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+                    animation: shimmer 3s infinite;
+                ">Recent Projects</h1>
             </div>
+            <br>
+
+        <div class="glass-panel">
+
+
             <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
-
-                        <!-- Make "Design" clickable -->
-                        <li class="btn btn-sm btn-outline-primary m-1">
-                            <a href="https://www.figma.com/proto/34OeBhDFzQLz6lGGoTRKqv/Anne-Okingo-UI-UX%E2%80%A8cover?node-id=5-118&t=L2vJlgIP1ZO4teA7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
-                                target="_blank" style="text-decoration: none; color: inherit;">
-                                UI/UX Design
-                            </a>
-                        </li>
-
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Development</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Tech for Social Good</li>
+                <div class="col-12 text-center mb-5">
+                    <ul class="list-inline" id="portfolio-flters">
+                        <li class="btn btn-outline-custom m-1 active" data-filter="*">All</li>
+                        <li class="btn btn-outline-custom m-1" data-filter=".design">Design</li>
+                        <li class="btn btn-outline-custom m-1" data-filter=".web-dev">Web Development</li>
+                        <li class="btn btn-outline-custom m-1" data-filter=".ai-ml">AI / Machine Learning</li>
+                        <li class="btn btn-outline-custom m-1" data-filter=".data-science">Data Science</li>
+                        <li class="btn btn-outline-custom m-1" data-filter=".social-good">Tech for Social Good</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-1.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://learn.zone01kisumu.ke/git/aokingo/ascii-art-justify.git"
-                                data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-2.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-3.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="https://majipulse.onrender.com/" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-4.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-5.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-relative overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/portfolio-6.jpg" alt="">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
+            <div class="row">
+                <div class="col-12">
+                        <div class="owl-carousel portfolio-carousel">
+
+                            <!-- === DESIGN ITEMS === -->
+                            <div class="portfolio-item design">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/uiux-1.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Kanthe Leather">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">E-Commerce Web App - Kanthe Leather
+                                                </h4>
+                                                <p class="text-secondary mb-4">Premium leather goods e-commerce platform
+                                                    showcasing handcrafted quality and artisanal heritage. Features
+                                                    curated
+                                                    collections.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Figma</span>
+                                                    <span class="tech-tag">UI/UX</span>
+                                                </div>
+                                                <a href="https://www.figma.com/design/8wnqa1C22WzUlZtD7b9fw3/Kanthe-Ecommerce?node-id=0-1&t=Gf2q2cen0FTGjoWH-1"
+                                                    target="_blank" class="btn btn-primary-custom mr-2"><i
+                                                        class="fab fa-figma mr-2"></i>View in Figma</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item design">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/uiux-2.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Essence Store">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Essence Store</h4>
+                                                <p class="text-secondary mb-4">Home Decor E-commerce prototyping with
+                                                    modern
+                                                    aesthetic design.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Figma</span>
+                                                    <span class="tech-tag">Prototyping</span>
+                                                </div>
+                                                <a href="https://www.figma.com/design/HAmj97p0ZTbVVJBMBw0OKM/Essence-Store?node-id=1203-565&t=5aQcGUZDkBHdbauS-1"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-figma mr-2"></i>View in Figma</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item design">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/uiux-3.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="HEAL App">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">HEAL App (Design)</h4>
+                                                <p class="text-secondary mb-4">Mental Health Support application design
+                                                    tailored for accessibility and ease of use.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Figma</span>
+                                                    <span class="tech-tag">Healthcare</span>
+                                                </div>
+                                                <a href="https://www.figma.com/proto/5YgUKdb0ycdSwE8Coksi3x/HealV4--Copy-?node-id=2033-6111&t=0s9rp8oYZEpAprvH-0"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-figma mr-2"></i>View in Figma</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item design">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/uiux-4.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;"
+                                                alt="Koru Mission Hospital">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Koru Mission Hospital</h4>
+                                                <p class="text-secondary mb-4">Digital Healthcare Presence redesign for
+                                                    better patient information access.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Figma</span>
+                                                    <span class="tech-tag">Web Design</span>
+                                                </div>
+                                                <a href="https://www.figma.com/proto/pGRXl29glWx1ZHN57JHzAT/Holy-Family_Mission_Hospital_Prototype_01272025_V5?node-id=18-635"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-figma mr-2"></i>View in Figma</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item design">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/uiux-5.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="BitDash">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">BitDash</h4>
+                                                <p class="text-secondary mb-4">Bitcoin Dashboard Fintech design for
+                                                    tracking
+                                                    assets.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Figma</span>
+                                                    <span class="tech-tag">Fintech</span>
+                                                </div>
+                                                <a href="https://www.figma.com/proto/2Sau3ADxzMTlFQ2Uoxrr61/Alice_Okingo_BitcoinDashboard_01142025_V1?node-id=56645-3&t=E24AWHoiugLBe4Q9-0"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-figma mr-2"></i>View in Figma</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- === WEB DEV ITEMS === -->
+                            <div class="portfolio-item web-dev">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-1.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="GraphQueryLanguage">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Graph Query Language</h4>
+                                                <p class="text-secondary mb-4">Implementation of a Graph Query Language
+                                                    system.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Go</span>
+                                                    <span class="tech-tag">Backend</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/GraphQueryLanguage.git"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item web-dev">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-2.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Backup Manager">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Backup Manager</h4>
+                                                <p class="text-secondary mb-4">A utility tool for managing system
+                                                    backups
+                                                    efficiently.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">System</span>
+                                                    <span class="tech-tag">Go</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/Backup-manager.git"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View
+                                                    Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item web-dev">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-3.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Movie Radar">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Movie Radar</h4>
+                                                <p class="text-secondary mb-4">A movie discovery application.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Web App</span>
+                                                    <span class="tech-tag">API</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/Movie-Radar.git" target="_blank"
+                                                    class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View
+                                                    Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item web-dev">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-4.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Real-time Forum">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Real-time Forum</h4>
+                                                <p class="text-secondary mb-4">A real-time discussion platform with live
+                                                    typing indicators and updates.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">WebSocket</span>
+                                                    <span class="tech-tag">Go</span>
+                                                    <span class="tech-tag">JS</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/real-time-forum-typing-in-progress.git"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- === AI / ML items === -->
+                            <div class="portfolio-item ai-ml social-good">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-5.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="HEAL">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">HEAL</h4>
+                                                <p class="text-secondary mb-4">Mental health psychosocial support
+                                                    platform
+                                                    for GBV survivors.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">AI</span>
+                                                    <span class="tech-tag">Healthcare</span>
+                                                </div>
+                                                <a href="https://github.com/andyosyndoh/hackathon-heal.git"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View
+                                                    Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item ai-ml social-good">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-6.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Afyakuu">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Afyakuu</h4>
+                                                <p class="text-secondary mb-4">AI-driven tool for cancer prediction in
+                                                    resource-limited settings.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Machine Learning</span>
+                                                    <span class="tech-tag">Healthcare</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/Code_Ssipers_Afya_Kuu.git"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- === DATA SCIENCE items === -->
+                            <div class="portfolio-item data-science">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-1.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Classification">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Classification</h4>
+                                                <p class="text-secondary mb-4">Data classification algorithms and
+                                                    analysis.
+                                                </p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Python</span>
+                                                    <span class="tech-tag">Data Science</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/classification.git"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View
+                                                    Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item data-science">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-2.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Linear Regression">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Linear Regression</h4>
+                                                <p class="text-secondary mb-4">Linear regression modeling for predictive
+                                                    analytics.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Python</span>
+                                                    <span class="tech-tag">ML</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/linear-regression"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View
+                                                    Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item data-science">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-3.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Visualization">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Data Visualization</h4>
+                                                <p class="text-secondary mb-4">Creating impactful visualizations to
+                                                    uncover
+                                                    data insights.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Python</span>
+                                                    <span class="tech-tag">Jupyter</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/Visualization.git"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View
+                                                    Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-item data-science">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-4.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="Data Wrangling">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">Data Wrangling</h4>
+                                                <p class="text-secondary mb-4">Cleaning and transforming raw data for
+                                                    analysis.</p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">Pandas</span>
+                                                    <span class="tech-tag">Data</span>
+                                                </div>
+                                                <a href="https://github.com/Anne-Okingo/data-wrangling.git"
+                                                    target="_blank" class="btn btn-primary-custom"><i
+                                                        class="fab fa-github mr-2"></i>View
+                                                    Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- === TECH FOR SOCIAL GOOD Items (Existing) === -->
+                            <div class="portfolio-item social-good">
+                                <div class="card border-0 shadow-sm overflow-hidden h-100">
+                                    <div class="row no-gutters h-100">
+                                        <div class="col-md-6">
+                                            <img src="img/portfolio-3.jpg" class="img-fluid h-100 w-100"
+                                                style="object-fit: cover; min-height: 300px;" alt="MajiPulse">
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5">
+                                                <h4 class="font-weight-bold mb-3">MajiPulse</h4>
+                                                <p class="text-secondary mb-4">Water access monitoring for community
+                                                    impact.
+                                                </p>
+                                                <div class="mb-4">
+                                                    <span class="tech-tag">IoT</span>
+                                                    <span class="tech-tag">Data Viz</span>
+                                                </div>
+                                                <a href="https://majipulse.onrender.com/" target="_blank"
+                                                    class="btn btn-primary-custom"><i class="fab fa-globe mr-2"></i>View
+                                                    Live</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- Portfolio End -->
 
-    <!-- UI/UX Projects Start -->
-    <div class="container-fluid py-5" id="uiux-projects">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Design</h1>
-                <h1 class="position-absolute text-uppercase text-primary">UI/UX Projects</h1>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-12 col-xl-10">
-                    <div class="uiux-carousel-container position-relative">
-                        <div class="uiux-carousel" id="uiuxCarousel">
-                            <!-- Project 1 -->
-                            <div class="uiux-slide active">
-                                <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <img class="img-fluid rounded shadow" src="img/uiux-1.jpg"
-                                            alt="UI/UX Project 1">
-                                    </div>
-                                    <div class="col-md-6 pl-md-4">
-                                        <h4 class="font-weight-bold mb-3">E-Commerce Web App- Kanthe Leather</h4>
-                                        <p class="mb-4">Premium leather goods e-commerce platform showcasing handcrafted
-                                            quality and artisanal heritage. Features curated collections, detailed
-                                            craftsmanship stories, and personalized shopping experiences that celebrate
-                                            the timeless appeal of genuine leather accessories.</p> <a
-                                            href="https://www.figma.com/design/8wnqa1C22WzUlZtD7b9fw3/Kanthe-Ecommerce?node-id=0-1&t=Gf2q2cen0FTGjoWH-1"
-                                            target="_blank" class="btn btn-primary">
-                                            <i class="fab fa-figma mr-2"></i>View in Figma
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 2 -->
-                            <div class="uiux-slide">
-                                <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <img class="img-fluid rounded shadow" src="img/uiux-2.jpg"
-                                            alt="UI/UX Project 2">
-                                    </div>
-                                    <div class="col-md-6 pl-md-4">
-                                        <h4 class="font-weight-bold mb-3">Essence Store - Curated Home Decor & Lifestyle
-                                        </h4>
-                                        <p class="mb-4">Sophisticated home decor e-commerce platform featuring carefully
-                                            curated furnishings, artisanal accessories, and lifestyle essentials. Offers
-                                            immersive room visualization, personalized style consultations, and seamless
-                                            shopping experiences that transform houses into beautifully designed homes
-                                            reflecting individual essence and taste.</p>
-                                        <a href="https://www.figma.com/design/HAmj97p0ZTbVVJBMBw0OKM/Essence-Store?node-id=1203-565&t=5aQcGUZDkBHdbauS-1"
-                                            target="_blank" class="btn btn-primary">
-                                            <i class="fab fa-figma mr-2"></i>View in Figma
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 3 -->
-                            <div class="uiux-slide">
-                                <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <img class="img-fluid rounded shadow" src="img/uiux-3.jpg"
-                                            alt="UI/UX Project 3">
-                                    </div>
-                                    <div class="col-md-6 pl-md-4">
-                                        <h4 class="font-weight-bold mb-3">HEAL - AI-Powered Mental Health Support for
-                                            Survivors</h4>
-                                        <p class="mb-4">Compassionate mental health web application providing secure AI
-                                            therapy sessions, trauma-informed resources, and 24/7 crisis support
-                                            specifically designed for SGBV survivors. Features privacy-first
-                                            architecture, culturally sensitive content, and personalized healing
-                                            pathways to support recovery and resilience.</p>
-                                        <a href="https://www.figma.com/proto/5YgUKdb0ycdSwE8Coksi3x/HealV4--Copy-?node-id=2033-6111&t=0s9rp8oYZEpAprvH-0&scaling=scale-down&content-scaling=fixed&page-id=451%3A1851&starting-point-node-id=2033%3A6111"
-                                            target="_blank" class="btn btn-primary">
-                                            <i class="fab fa-figma mr-2"></i>View in Figma
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 4 -->
-                            <div class="uiux-slide">
-                                <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <img class="img-fluid rounded shadow" src="img/uiux-4.jpg"
-                                            alt="UI/UX Project 4">
-                                    </div>
-                                    <div class="col-md-6 pl-md-4">
-                                        <h4 class="font-weight-bold mb-3">Koru Mission Hospital - Digital Healthcare
-                                            Presence</h4>
-                                        <p class="mb-4">Professional hospital website showcasing comprehensive medical
-                                            services, specialized departments, and expert healthcare teams. Features
-                                            online appointment booking, patient portal access, health resources, and
-                                            virtual facility tours to enhance patient engagement and streamline
-                                            healthcare accessibility for the Koru community.</p>
-                                        <a href="https://www.figma.com/proto/pGRXl29glWx1ZHN57JHzAT/Holy-Family_Mission_Hospital_Prototype_01272025_V5?node-id=18-635" target="_blank" class="btn btn-primary">
-                                            <i class="fab fa-figma mr-2"></i>View in Figma
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 5 -->
-                            <div class="uiux-slide">
-                                <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <img class="img-fluid rounded shadow" src="img/uiux-5.jpg"
-                                            alt="UI/UX Project 5">
-                                    </div>
-                                    <div class="col-md-6 pl-md-4">
-                                        <h4 class="font-weight-bold mb-3">BitDash - Bitcoin Portfolio Management
-                                            Dashboard</h4>
-                                        <p class="mb-4">Comprehensive Bitcoin trading and portfolio management platform
-                                            featuring real-time market data, advanced analytics, and secure wallet
-                                            integration. Offers personalized insights, price alerts, transaction history
-                                            tracking, and intuitive visualization tools to help users monitor, analyze,
-                                            and optimize their Bitcoin investments with confidence.</p>
-                                        <a href="https://www.figma.com/proto/2Sau3ADxzMTlFQ2Uoxrr61/Alice_Okingo_BitcoinDashboard_01142025_V1?node-id=56645-3&t=E24AWHoiugLBe4Q9-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
-                                            target="_blank" class="btn btn-primary">
-                                            <i class="fab fa-figma mr-2"></i>View in Figma
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Navigation -->
-                        <button class="carousel-nav prev" id="prevBtn">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="carousel-nav next" id="nextBtn">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-
-                        <!-- Dots -->
-                        <div class="carousel-dots text-center mt-4">
-                            <span class="dot active" data-slide="0"></span>
-                            <span class="dot" data-slide="1"></span>
-                            <span class="dot" data-slide="2"></span>
-                            <span class="dot" data-slide="3"></span>
-                            <span class="dot" data-slide="4"></span>
-                        </div>
-                    </div>
+    <!-- Figma Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="figmaModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">Kanthe Leather Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F8wnqa1C22WzUlZtD7b9fw3%2FKanthe-Ecommerce%3Fnode-id%3D0-1%26t%3DGf2q2cen0FTGjoWH-1"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
-    <!-- UI/UX Projects End -->
+    <!-- Modal 2 -->
+    <div class="modal fade" id="figmaModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">Essence Store Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FHAmj97p0ZTbVVJBMBw0OKM%2FEssence-Store%3Fnode-id%3D1203-565%26t%3D5aQcGUZDkBHdbauS-1"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 3 -->
+    <div class="modal fade" id="figmaModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">HEAL App Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5YgUKdb0ycdSwE8Coksi3x%2FHealV4--Copy-%3Fnode-id%3D2033-6111%26t%3D0s9rp8oYZEpAprvH-0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 4 -->
+    <div class="modal fade" id="figmaModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">Koru Mission Hospital Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FpGRXl29glWx1ZHN57JHzAT%2FHoly-Family_Mission_Hospital_Prototype_01272025_V5%3Fnode-id%3D18-635"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 5 -->
+    <div class="modal fade" id="figmaModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title font-weight-bold">BitDash Prototype</h5>
+                    <button type="button" class="close close-custom" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F2Sau3ADxzMTlFQ2Uoxrr61%2FAlice_Okingo_BitcoinDashboard_01142025_V1%3Fnode-id%3D56645-3%26t%3DE24AWHoiugLBe4Q9-0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Testimonial Start -->
@@ -834,62 +1478,106 @@
                             <span>Pamoja Trust</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Testimonial End -->
-
-
     <!-- Blog Start -->
-    <div class="container-fluid pt-5" id="blog">
+    <div class="container-fluid py-5 section-padding" id="blog">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Blog</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Latest Blog</h1>
+
+
+
+            <div class="position-relative d-flex align-items-center justify-content-center"
+                style="height: 200px; overflow: hidden;">
+                <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">ARTICLES</h1>
+
+                <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Latest Insights</h1>
             </div>
+            <br>
+
+            <style>
+                @keyframes shimmer {
+
+                    0%,
+                    100% {
+                        filter: hue-rotate(0deg);
+                    }
+
+                    50% {
+                        filter: hue-rotate(45deg);
+                    }
+                }
+            </style>
+
+
             <div class="row">
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-1.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">04</h4>
-                            <small class="text-white text-uppercase">July</small>
+                <!-- Blog 1 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-item fade-in h-100 pb-4">
+                        <div class="position-relative mb-4 overflow-hidden">
+                            <img class="img-fluid w-100" src="img/blog-1.jpg" alt="">
+                            <div class="blog-date">
+                                <h4 class="font-weight-bold mb-n1">04</h4>
+                                <small class="text-white text-uppercase">July</small>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <h5 class="font-weight-bold mb-3">Learning how to code was hard until I mastered these 8
+                                habits</h5>
+                            <a class="btn btn-sm btn-outline-custom py-2 px-4"
+                                href="https://www.linkedin.com/pulse/learning-how-code-hard-until-i-mastered-8-habits-anne-okingo-on54f/"
+                                target="_blank">Read More</a>
                         </div>
                     </div>
-                    <h5 class="font-weight-medium mb-4">Learning how to code was hard until I mastered these 8 habits
-                    </h5>
-                    <a class="btn btn-sm btn-outline-primary py-2"
-                        href="https://www.linkedin.com/pulse/learning-how-code-hard-until-i-mastered-8-habits-anne-okingo-on54f/?trackingId=5F0Hzb%2BkTpeCvf7CU9uhzQ%3D%3D">Read
-                        More</a>
                 </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-2.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">28</h4>
-                            <small class="text-white text-uppercase">Aug</small>
+                <!-- Blog 2 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-item fade-in h-100 pb-4">
+                        <div class="position-relative mb-4 overflow-hidden">
+                            <img class="img-fluid w-100" src="img/blog-2.jpg" alt="">
+                            <div class="blog-date">
+                                <h4 class="font-weight-bold mb-n1">28</h4>
+                                <small class="text-white text-uppercase">Aug</small>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <h5 class="font-weight-bold mb-3">Understanding APIs: A Comprehensive Guide to API Concepts
+                            </h5>
+                            <a class="btn btn-sm btn-outline-custom py-2 px-4"
+                                href="https://docs.google.com/document/d/1p0uMpAtABAabhJZi1FkVXQSRnyemLMes/edit?usp=sharing"
+                                target="_blank">Read More</a>
                         </div>
                     </div>
-                    <h5 class="font-weight-medium mb-4">Understanding APIs: A Comprehensive Guide to API Concepts and
-                        Using APIs in Go</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2"
-                        href="https://docs.google.com/document/d/1p0uMpAtABAabhJZi1FkVXQSRnyemLMes/edit?usp=sharing&ouid=112706888887884946655&rtpof=true&sd=true">Read
-                        More</a>
                 </div>
-                <div class="col-lg-4 mb-5">
-                    <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="img/blog-3.jpg" alt="">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">26</h4>
-                            <small class="text-white text-uppercase">Sep</small>
+                <!-- Blog 3 -->
+                <div class="col-lg-4 mb-4">
+                    <div class="blog-item fade-in h-100 pb-4">
+                        <div class="position-relative mb-4 overflow-hidden">
+                            <img class="img-fluid w-100" src="img/blog-3.jpg" alt="">
+                            <div class="blog-date">
+                                <h4 class="font-weight-bold mb-n1">26</h4>
+                                <small class="text-white text-uppercase">Sep</small>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <h5 class="font-weight-bold mb-3">The Ultimate Guide to Docker: Simplifying Containers</h5>
+                            <a class="btn btn-sm btn-outline-custom py-2 px-4"
+                                href="https://docs.google.com/document/d/1MzYBa0sZraOLS5RiIugw3hnGFP_y-VBYVVNSTZGkOBc/edit?usp=sharing"
+                                target="_blank">Read More</a>
                         </div>
                     </div>
-                    <h5 class="font-weight-medium mb-4">The Ultimate Guide to Docker: Simplifying Containers and
-                        Application Deployment</h5>
-                    <a class="btn btn-sm btn-outline-primary py-2"
-                        href="https://docs.google.com/document/d/1MzYBa0sZraOLS5RiIugw3hnGFP_y-VBYVVNSTZGkOBc/edit?usp=sharing">Read
-                        More</a>
                 </div>
             </div>
         </div>
@@ -898,12 +1586,48 @@
 
 
     <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
+    <div class="container-fluid py-5 section-padding" id="contact">
         <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
+
+
+
+            <div class="position-relative d-flex align-items-center justify-content-center"
+                style="height: 200px; overflow: hidden;">
+                <h1 class="display-1 text-uppercase" style="
+        -webkit-text-stroke: 2px #656769;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+    ">CONTACT</h1>
+
+                <h1 class="position-absolute text-uppercase" style="
+        background: linear-gradient(45deg, #00d4ff, #00ff88, #c0b574);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        animation: shimmer 3s infinite;
+    ">Get In Touch</h1>
             </div>
+            <br>
+            <style>
+                @keyframes shimmer {
+
+                    0%,
+                    100% {
+                        filter: hue-rotate(0deg);
+                    }
+
+                    50% {
+                        filter: hue-rotate(45deg);
+                    }
+                }
+            </style>
+
+
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-form text-center">
@@ -912,38 +1636,37 @@
                         <form name="sentMessage" id="contactForm" action="/contact" method="POST"
                             novalidate="novalidate">
                             <div class="form-row">
-                                <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" name="name"
+                                <div class="control-group col-sm-6 mb-3">
+                                    <input type="text" class="form-control" id="name" name="name"
                                         placeholder="Your Name" required="required"
                                         data-validation-required-message="Please enter your name" />
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" name="email"
+                                <div class="control-group col-sm-6 mb-3">
+                                    <input type="email" class="form-control" id="email" name="email"
                                         placeholder="Your Email" required="required"
                                         data-validation-required-message="Please enter your email" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" name="subject"
+                            <div class="control-group mb-3">
+                                <input type="text" class="form-control" id="subject" name="subject"
                                     placeholder="Subject" required="required"
                                     data-validation-required-message="Please enter a subject" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" name="message"
+                            <div class="control-group mb-3">
+                                <textarea class="form-control" rows="5" id="message" name="message"
                                     placeholder="Message" required="required"
                                     data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-primary" type="submit" id="sendMessageButton">
-                                    <i class="fas fa-envelope mr-2"></i>Send Message
-                                </button>
+                                <button class="btn btn-primary-custom py-3 px-5" type="submit"
+                                    id="sendMessageButton">Send
+                                    Message</button>
                             </div>
                         </form>
-                        <!-- contact form ends -->
                     </div>
                 </div>
             </div>
@@ -953,29 +1676,18 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="container-fluid footer mt-5 py-5 px-sm-3 px-md-5">
         <div class="container text-center py-5">
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-light btn-social" href="https://github.com/Anne-Okingo"><i
-                        class="fab fa-github"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://www.linkedin.com/in/anne-okingo-8ab242126/"><i
+            <div class="d-flex justify-content-center mb-4 social-links">
+                <a class="btn btn-social" href="https://github.com/Anne-Okingo"><i class="fab fa-github"></i></a>
+                <a class="btn btn-social mr-2" href="https://www.linkedin.com/in/anne-okingo-8ab242126/"><i
                         class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://x.com/anne_kadiso"><i
-                        class="fab fa-twitter"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="https://www.facebook.com/ekmar.kadiso.94"><i
+                <a class="btn btn-social mr-2" href="https://x.com/anne_kadiso"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-social mr-2" href="https://www.facebook.com/ekmar.kadiso.94"><i
                         class="fab fa-facebook-f"></i></a>
             </div>
-            <div class="d-flex justify-content-center mb-3">
-                <a class="text-white" href="#">Privacy</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">Terms</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">FAQs</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">Help</a>
-            </div>
-            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#">Alice Okingo</a>. All Rights Reserved.
-                Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">Alice Okingo</a>
+
+            <p class="m-0">&copy; <a class="font-weight-bold" href="#">Alice Okingo</a>. All Rights Reserved.
             </p>
         </div>
     </div>
@@ -992,7 +1704,9 @@
     <!-- Scrolling -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- typewriting -->
+    <!-- typewriting -->
     <script src="lib/typed/typed.min.js"></script>
+    <!-- navbar scrolling -->
     <!-- navbar scrolling -->
     <script src="lib/easing/easing.min.js"></script>
 
@@ -1006,8 +1720,9 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/modern-enhancements.js"></script>
-    <script src="js/uiux-carousel.js"></script>
+    <script src="js/custom.js"></script>
+
+
 </body>
 
 </html>
